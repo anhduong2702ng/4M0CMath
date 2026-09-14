@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4M0. NDBH 12-09</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles/shared.css">
+</head>
+<body class="mode-locked">
+<div class="toolbar">
+<button onclick="document.body.classList.toggle('eink');this.classList.toggle('active')">📖 E-ink</button>
+<button onclick="window.print()">🖨️ In</button>
+</div>
+<div class="page-container">
+<div class="password-gate" id="passwordGate">
+    <div class="gate-icon">🔒</div>
+    <div class="gate-title">Đáp án được bảo vệ</div>
+    <div class="gate-desc">Dành cho Bố Mẹ — Nhập mật khẩu để xem đáp án</div>
+    <div><input type="password" id="pwInput" placeholder="••••••" maxlength="6" onkeydown="if(event.key==='Enter')checkPw()">
+    <button onclick="checkPw()">Mở khóa</button></div>
+    <div class="gate-error" id="pwError"></div>
+</div><div class="page-card">
+    <div class="page-header">
+        <div class="brand"><span class="brand-name">CMATH</span><span class="brand-sub">Education</span></div>
+        <div class="meta-info">
+            <div class="lesson-title">BÀI TOÁN LẬP SỐ</div>
+            <div><b>Môn:</b> Toán 4 &nbsp; <b>Lớp:</b> 4M0</div>
+            <div><b>Ngày:</b> 12/09/2026</div>
+            <div><b>GV:</b> Đỗ Thị Thủy</div>
+        </div>
+    </div>
+    <div class="section-title">Kiến thức nền tảng</div>
+    <div class="box-highlight box-blue" style="text-align:center; margin-bottom:1rem;">
+        <div style="font-style:italic; color:var(--text-red);"><span style="text-decoration:overline;">abcde</span> = a &times; 10 000 + b &times; 1 000 + c &times; 100 + d &times; 10 + e</div>
+    </div>
+
+    <p><b>Bài 1.</b> Viết số tự nhiên x, biết:</p>
+    <div class="content-area" style="padding-left:1rem;">
+        <p>a) x = 4 &times; 1 000 + 2 &times; 100 + 5 &times; 10 + 1 &rarr; x = <span class="answer">4 251</span><span class="blank">......</span></p>
+        <p>b) x = 7 &times; 10 000 + 8 &times; 100 + 9 &rarr; x = <span class="answer">70 809</span><span class="blank">......</span></p>
+        <p>c) x = 2 &times; 1 000 000 + 2 &times; 1 000 + 2 &rarr; x = <span class="answer">2 002 002</span><span class="blank">......</span></p>
+    </div>
+
+    <p><b>Bài 2.</b></p>
+    <div class="content-area" style="padding-left:1rem;">
+        <p>a) Từ 3 chữ số 6, 7, 8 hãy viết tất cả các số có 3 chữ số khác nhau. Sắp xếp các số theo thứ tự từ lớn đến bé.</p>
+        <div class="answer-block answer">Các số lập được là: 678; 687; 786; 768; 867; 876<br>Sắp xếp từ lớn đến bé: 876; 867; 786; 768; 687; 678</div><div class="blank-block"><span class="blank-line"></span><span class="blank-line"></span></div>
+        <p>b) Từ 3 chữ số 5, 0, 9 hãy viết tất cả các số có 3 chữ số khác nhau. Sắp xếp theo thứ tự tăng dần.</p>
+        <div class="answer-block answer">Các số lập được là: 509; 590; 905; 950<br>Sắp xếp tăng dần: 509; 590; 905; 950</div><div class="blank-block"><span class="blank-line"></span><span class="blank-line"></span></div>
+    </div>
+
+    <p><b>Bài 3.</b> Cho 6 chữ số 0, 1, 2, 3, 7, 9. Viết <u>số lớn nhất</u> và <u>nhỏ nhất</u> có mặt đủ 6 chữ số trên.</p>
+    <div class="content-area" style="padding-left:1rem;">
+        <p>Số lớn nhất: <span class="answer">973 210</span><span class="blank">......</span></p>
+        <p>Số bé nhất: <span class="answer">102 379</span><span class="blank">......</span></p>
+    </div>
+    <div class="page-footer"><span>Câu lạc bộ Toán học Muôn màu</span><span>Trang 1</span></div>
+</div>
+<div class="page-card">
+    <div class="page-header">
+        <div class="brand"><span class="brand-name">CMATH</span><span class="brand-sub">Education</span></div>
+        <div class="meta-info">
+            <div class="lesson-title">BÀI TOÁN LẬP SỐ (tiếp)</div>
+            <div><b>Môn:</b> Toán 4 &nbsp; <b>Lớp:</b> 4M0</div>
+            <div><b>Ngày:</b> 12/09/2026</div>
+            <div><b>GV:</b> Đỗ Thị Thủy</div>
+        </div>
+    </div>
+    <p><b>Bài 4.</b> Viết số tự nhiên theo điều kiện sau:</p>
+    <div class="content-area" style="padding-left:1rem;">
+        <p>a) Lớn nhất có 6 chữ số: <span class="answer">999 999</span><span class="blank">......</span></p>
+        <p>b) Bé nhất có <u>5 chữ số khác nhau</u>: <span class="answer">10 234</span><span class="blank">......</span></p>
+        <p>c) Lớn nhất có 6 chữ số mà hàng trăm là 2: <span class="answer">999 299</span><span class="blank">......</span></p>
+        <p>d) Số lớn nhất có 8 chữ số khác nhau: <span class="answer">98 765 432</span><span class="blank">......</span></p>
+        <p>e) Số <u>lẻ</u> lớn nhất có 6 chữ số khác nhau: <span class="answer">987 653</span><span class="blank">......</span></p>
+        <p>g) Số chẵn <u>bé nhất</u> có 5 chữ số <u>khác nhau</u>: <span class="answer">10 234</span><span class="blank">......</span></p>
+        <p>h) Số bé nhất có 7 chữ số khác nhau bắt đầu bởi chữ số 8: <span class="answer">8 012 345</span><span class="blank">......</span></p>
+    </div>
+
+    <p><b>Bài 5.</b> Viết:</p>
+    <div class="content-area" style="padding-left:1rem;">
+        <p>a) Số tự nhiên <u>bé nhất</u> có 5 chữ số được viết <u>từ ba chữ số khác nhau</u>: <span class="answer">10 002</span><span class="blank">......</span></p>
+        <p>b) Số tự nhiên <u>lớn nhất</u> có 5 chữ số được viết từ <u>ba chữ số khác nhau</u>: <span class="answer">99 987</span><span class="blank">......</span></p>
+    </div>
+
+    <p><b>Bài 6.</b> Điền số thích hợp vào chỗ trống</p>
+    <div class="content-area" style="padding-left:1rem;">
+        <p>Minh viết liên tiếp 15 số lẻ đầu tiên để được một số tự nhiên. Hãy xóa đi 15 chữ số của số tự nhiên vừa nhận được mà vẫn giữ nguyên thứ tự của các chữ số còn lại.</p>
+        <p>Số Minh viết được là: 1357911131517192123252729</p>
+        <p>Sau khi xóa 15 chữ số, số <u>lớn nhất</u> là: <span class="answer">9923252729</span><span class="blank">......</span></p>
+        <p>Số <u>bé nhất</u> là: <span class="answer">1111111222</span><span class="blank">......</span></p>
+    </div>
+    <div class="page-footer"><span>Câu lạc bộ Toán học Muôn màu</span><span>Trang 2</span></div>
+</div>
+<div class="page-card">
+    <div class="page-header">
+        <div class="brand"><span class="brand-name">CMATH</span><span class="brand-sub">Education</span></div>
+        <div class="meta-info">
+            <div class="lesson-title">BÀI TOÁN LẬP SỐ (tiếp)</div>
+            <div><b>Môn:</b> Toán 4 &nbsp; <b>Lớp:</b> 4M0</div>
+            <div><b>Ngày:</b> 12/09/2026</div>
+            <div><b>GV:</b> Đỗ Thị Thủy</div>
+        </div>
+    </div>
+    <p><b>Bài 7.</b> Điền đáp án</p>
+    <table>
+        <thead><tr><th style="width:75%;">Đề bài</th><th>Đáp án</th></tr></thead>
+        <tbody>
+            <tr>
+                <td><b>a)</b> Tìm số tự nhiên <u>nhỏ nhất</u> có <u>tổng các chữ số bằng 12</u>.
+                    <div class="answer" style="font-style:italic; margin-top:0.25rem;">Ít chữ số nhất &rarr; các chữ số lớn nhất.<br>12 = 9 + 3 &rarr; số cần tìm là 39</div>
+                </td>
+                <td class="answer-cell"><span class="answer">39</span><span class="blank">......</span></td>
+            </tr>
+            <tr>
+                <td><b>b)</b> Tìm số tự nhiên lớn nhất có <u>các chữ số khác nhau</u> mà <u>tích</u> các chữ số bằng 30.
+                    <div class="answer" style="font-style:italic; margin-top:0.25rem;">30 = 10 &times; 3 &times; 1 = 5 &times; 2 &times; 3 &times; 1<br>&rarr; Số lập được là 5321</div>
+                </td>
+                <td class="answer-cell"><span class="answer">5321</span><span class="blank">......</span></td>
+            </tr>
+            <tr>
+                <td><b>c)</b> Tìm số tự nhiên <u>lớn nhất có 3 chữ số khác nhau</u> mà <u>tổng</u> các chữ số bằng 10.
+                    <div class="answer" style="font-style:italic; margin-top:0.25rem;">10 = 9 + 1 + 0</div>
+                </td>
+                <td class="answer-cell"><span class="answer">910</span><span class="blank">......</span></td>
+            </tr>
+            <tr>
+                <td><b>d)</b> Tìm số tự nhiên bé nhất có 3 chữ số khác nhau mà <u>tổng</u> các chữ số bằng 14.
+                    <div class="answer" style="font-style:italic; margin-top:0.25rem;">14 = 1 + 9 + 4</div>
+                </td>
+                <td class="answer-cell"><span class="answer">149</span><span class="blank">......</span></td>
+            </tr>
+            <tr>
+                <td><b>e)</b> Tìm số tự nhiên <u>bé nhất có 4 chữ số khác nhau</u> mà <u>tổng</u> các chữ số bằng 15.
+                    <div class="answer" style="font-style:italic; margin-top:0.25rem;">15 = 1 + 0 + 9 + 5</div>
+                </td>
+                <td class="answer-cell"><span class="answer">1059</span><span class="blank">......</span></td>
+            </tr>
+            <tr>
+                <td><b>f)</b> Tìm số <u>tự nhiên bé nhất</u> có <u>các chữ số khác nhau</u> và tổng các chữ số là 29.
+                    <div class="answer" style="font-style:italic; margin-top:0.25rem;">Muốn số bé nhất thì phải ít chữ số nhất<br>&rarr; các chữ số lớn nhất.<br>29 = 9 + 8 + 7 + 5</div>
+                </td>
+                <td class="answer-cell"><span class="answer">5789</span><span class="blank">......</span></td>
+            </tr>
+            <tr>
+                <td><b>g)</b> Tìm <u>số tự nhiên lớn nhất</u> có <u>các chữ số khác nhau</u> và tổng các chữ số là 15.
+                    <div class="answer" style="font-style:italic; margin-top:0.25rem;">Muốn số lớn nhất thì phải nhiều chữ số nhất<br>&rarr; Các chữ số phải bé nhất.<br>15 = 0 + 1 + 2 + 3 + 4 + 5</div>
+                </td>
+                <td class="answer-cell"><span class="answer">543210</span><span class="blank">......</span></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="page-footer"><span>Câu lạc bộ Toán học Muôn màu</span><span>Trang 3</span></div>
+</div>
+</div>
+<script>
+function checkPw(){var p=document.getElementById('pwInput').value;
+if(p==='000000'){document.body.classList.remove('mode-locked');document.body.classList.add('mode-unlocked');
+document.getElementById('passwordGate').style.display='none';}
+else{document.getElementById('pwError').textContent='Sai mật khẩu!';
+document.getElementById('pwInput').value='';document.getElementById('pwInput').focus();}}
+document.addEventListener('DOMContentLoaded',function(){var i=document.getElementById('pwInput');if(i)i.focus();});
+</script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMath Education - Danh sách bài học</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .module-group {
+            margin-bottom: 3rem;
+        }
+
+        .module-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .module-title::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 1.5rem;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+        }
+
+        .card-type {
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .card-meta {
+            margin-top: auto;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CMath Education</h1>
+            <div class="subtitle">Kho học liệu điện tử Toán 4 - Lớp 4M0</div>
+        </header>
+
+        <div class="module-group">
+            <div class="module-title">Ngày 05/09/2026</div>
+            <div class="grid">
+                <a href="outputdata/05092026/4M0_NDBH_05-09.html" class="card">
+                    <div class="card-type">Nội dung bài học</div>
+                    <div class="card-title">4M0. NDBH 05-09</div>
+                    <div class="card-meta">
+                        <span>Đọc, Viết Số Tự Nhiên</span>
+                        <span>05/09</span>
+                    </div>
+                </a>
+                <a href="outputdata/05092026/4M0_BTVN_05-09.html" class="card">
+                    <div class="card-type">Bài tập về nhà</div>
+                    <div class="card-title">4M0. BTVN 05-09</div>
+                    <div class="card-meta">
+                        <span>Đọc, Viết Số Tự Nhiên</span>
+                        <span>05/09</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="module-group">
+            <div class="module-title">Ngày 12/09/2026</div>
+            <div class="grid">
+                <a href="outputdata/12092026/4M0_NDBH_12-09.html" class="card">
+                    <div class="card-type">Nội dung bài học</div>
+                    <div class="card-title">4M0. NDBH 12-09</div>
+                    <div class="card-meta">
+                        <span>Bài Toán Lập Số</span>
+                        <span>12/09</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

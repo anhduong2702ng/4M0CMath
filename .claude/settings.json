@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python pptx2html.py -i \"D:\\\\thanhnb\\\\AI\\\\gemini\\\\gemini_pptx2html\\\\inputdata\\\\bai 6\\\\Bài 6 Ôn tập danh từ - Kiểm tra danh từ và viết miêu tả.pptx\" -o \"D:\\\\thanhnb\\\\AI\\\\gemini\\\\gemini_pptx2html\\\\outputdata\\\\bai_6\")"
+    ]
+  }
+}

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4M0. NDBH 05-09</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles/shared.css">
+</head>
+<body class="mode-locked">
+<div class="toolbar">
+<button onclick="document.body.classList.toggle('eink');this.classList.toggle('active')">📖 E-ink</button>
+<button onclick="window.print()">🖨️ In</button>
+</div>
+<div class="page-container">
+<div class="password-gate" id="passwordGate">
+    <div class="gate-icon">🔒</div>
+    <div class="gate-title">Đáp án được bảo vệ</div>
+    <div class="gate-desc">Dành cho Bố Mẹ — Nhập mật khẩu để xem đáp án</div>
+    <div><input type="password" id="pwInput" placeholder="••••••" maxlength="6" onkeydown="if(event.key==='Enter')checkPw()">
+    <button onclick="checkPw()">Mở khóa</button></div>
+    <div class="gate-error" id="pwError"></div>
+</div><div class="page-card">
+    <div class="page-header">
+        <div class="brand"><span class="brand-name">CMATH</span><span class="brand-sub">Education</span></div>
+        <div class="meta-info">
+            <div class="lesson-title">ĐỌC, VIẾT SỐ TỰ NHIÊN</div>
+            <div><b>Môn:</b> Toán 4 &nbsp; <b>Lớp:</b> 4M0</div>
+            <div><b>Ngày:</b> 05/09/2026</div>
+            <div><b>GV:</b> Đỗ Thị Thủy</div>
+        </div>
+    </div>
+    <div style="text-align:center; margin-bottom:1.5rem;">
+        <img src="images_ndbh_05/page_09.png" alt="Mindmap – Củng cố kiến thức về số tự nhiên" style="max-width:100%; border-radius:0.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+    </div>
+    <div class="section-title">A. Kiến thức cần nhớ</div>
+    <h2 style="text-align:center; margin:1rem 0; font-size:1.3rem;">Củng cố kiến thức về số tự nhiên</h2>
+
+    <div class="grid-3">
+        <div style="text-align:center;">
+            <div style="font-size:1.5rem; font-weight:bold; color:var(--text-red); letter-spacing:0.1em;">0 1 2 3 4 5 6 7 8 9</div>
+            <div style="font-weight:bold; margin-top:0.5rem;">10 Chữ số "Quyền năng"</div>
+            <div style="font-size:0.9rem; color:var(--text-gray); margin-top:0.25rem;">Sử dụng các chữ số từ 0 đến 9 để viết mọi số tự nhiên.</div>
+        </div>
+        <div style="text-align:center;">
+            <div style="font-weight:bold; margin-bottom:0.5rem;">Phân loại Chẵn và Lẻ</div>
+            <div class="grid-2" style="gap:0.5rem;">
+                <div class="box-highlight box-blue" style="padding:0.75rem; text-align:center;">
+                    <div style="font-weight:bold;">0, 2, 4, 6, 8</div>
+                    <div style="font-size:0.85rem;">Số chẵn tận cùng là 0, 2, 4, 6, 8</div>
+                </div>
+                <div class="box-highlight box-orange" style="padding:0.75rem; text-align:center;">
+                    <div style="font-weight:bold;">1, 3, 5, 7, 9</div>
+                    <div style="font-size:0.85rem;">Số lẻ tận cùng là 1, 3, 5, 7, 9</div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center;">
+            <div style="font-weight:bold; margin-bottom:0.5rem;">Mối quan hệ</div>
+            <div style="font-weight:bold; color:var(--text-red);">"Liền trước - Liền sau"</div>
+            <div style="font-size:0.9rem; margin-top:0.25rem;">Hai số tự nhiên liên tiếp hơn kém nhau 1 đơn vị; số 0 là số bé nhất.</div>
+            <div style="font-size:0.85rem; color:var(--text-gray); margin-top:0.25rem;">Trong dãy chẵn/lẻ: hai số liên tiếp nhau hơn kém nhau 2 đơn vị.</div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="sub-title" style="text-align:center;">Hàng và Lớp</div>
+    <table style="margin:0 auto; width:95%;">
+        <thead>
+            <tr>
+                <th style="width:8%;">Lớp</th>
+                <th colspan="3" class="box-blue" style="background:#eff6ff;">Tỉ</th>
+                <th colspan="3" class="box-orange" style="background:#fff7ed;">Triệu</th>
+                <th colspan="3" class="box-green" style="background:#f0fdf4;">Nghìn</th>
+                <th colspan="3" style="background:#fdf2f8;">Đơn vị</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="font-weight:bold; text-align:center;">Hàng</td>
+                <td style="text-align:center; font-size:0.8rem;">Trăm tỉ</td>
+                <td style="text-align:center; font-size:0.8rem;">Chục tỉ</td>
+                <td style="text-align:center; font-size:0.8rem;">Tỉ</td>
+                <td style="text-align:center; font-size:0.8rem;">Trăm triệu</td>
+                <td style="text-align:center; font-size:0.8rem;">Chục triệu</td>
+                <td style="text-align:center; font-size:0.8rem;">Triệu</td>
+                <td style="text-align:center; font-size:0.8rem;">Trăm nghìn</td>
+                <td style="text-align:center; font-size:0.8rem;">Chục nghìn</td>
+                <td style="text-align:center; font-size:0.8rem;">Nghìn</td>
+                <td style="text-align:center; font-size:0.8rem;">Trăm</td>
+                <td style="text-align:center; font-size:0.8rem;">Chục</td>
+                <td style="text-align:center; font-size:0.8rem;">Đơn vị</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr class="divider">
+
+    <div class="sub-title" style="text-align:center;">Quy Tắc So Sánh &amp; Lập Số Logic</div>
+    <div class="grid-4">
+        <div class="note-card">
+            <div class="note-title">Bí kíp So sánh<br>"Siêu tốc"</div>
+            <ul style="font-size:0.85rem; padding-left:1rem;">
+                <li>Số có nhiều chữ số hơn thì lớn hơn, số có ít chữ số hơn thì bé hơn.</li>
+                <li>Nếu số chữ số bằng nhau, so sánh từ trái qua phải.</li>
+            </ul>
+        </div>
+        <div class="note-card">
+            <div class="note-title">Mẹo tìm<br>Số Bé Nhất</div>
+            <div style="font-size:0.85rem;">Cần ít chữ số nhất có thể, ưu tiên đưa các chữ số lớn (như 9) về hàng thấp.</div>
+        </div>
+        <div class="note-card">
+            <div class="note-title">Mẹo tìm<br>Số Lớn Nhất</div>
+            <div style="font-size:0.85rem;">Cần nhiều chữ số nhất, chữ số lớn ở hàng cao nhất.</div>
+        </div>
+        <div class="note-card">
+            <div class="note-title">Bài toán<br>xóa chữ số</div>
+            <div style="font-size:0.85rem;">Để số còn lại lớn nhất, hãy giữ chữ số lớn nhất ở hàng cao nhất.</div>
+        </div>
+    </div>
+    <div class="page-footer"><span>Câu lạc bộ Toán học Muôn màu</span><span>Trang 1</span></div>
+</div>
+<div class="page-card">
+    <div class="page-header">
+        <div class="brand"><span class="brand-name">CMATH</span><span class="brand-sub">Education</span></div>
+        <div class="meta-info">
+            <div class="lesson-title">BÀI TẬP – ĐỌC, VIẾT SỐ TỰ NHIÊN</div>
+            <div><b>Môn:</b> Toán 4 &nbsp; <b>Lớp:</b> 4M0</div>
+            <div><b>Ngày:</b> 05/09/2026</div>
+            <div><b>GV:</b> Đỗ Thị Thủy</div>
+        </div>
+    </div>
+    <div class="section-title">B. Bài tập thực hành</div>
+
+    <p><b>Bài 1.</b> Điền số thích hợp vào chỗ chấm:</p>
+    <table style="text-align:center; font-size:0.9rem;">
+        <thead>
+            <tr>
+                <th rowspan="2">Số</th>
+                <th colspan="3">Lớp triệu</th>
+                <th colspan="3">Lớp nghìn</th>
+                <th colspan="3">Lớp đơn vị</th>
+            </tr>
+            <tr>
+                <th>Trăm triệu</th><th>Chục triệu</th><th>Triệu</th>
+                <th>Trăm nghìn</th><th>Chục nghìn</th><th>Nghìn</th>
+                <th>Trăm</th><th>Chục</th><th>Đơn vị</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>678 956</td>
+                <td><span class="answer">0</span><span class="blank">......</span></td><td><span class="answer">0</span><span class="blank">......</span></td><td><span class="answer">0</span><span class="blank">......</span></td>
+                <td><span class="answer">6</span><span class="blank">......</span></td><td><span class="answer">7</span><span class="blank">......</span></td><td><span class="answer">8</span><span class="blank">......</span></td>
+                <td><span class="answer">9</span><span class="blank">......</span></td><td><span class="answer">5</span><span class="blank">......</span></td><td><span class="answer">6</span><span class="blank">......</span></td>
+            </tr>
+            <tr>
+                <td>3 245 687</td>
+                <td><span class="answer">0</span><span class="blank">......</span></td><td><span class="answer">0</span><span class="blank">......</span></td><td><span class="answer">3</span><span class="blank">......</span></td>
+                <td><span class="answer">2</span><span class="blank">......</span></td><td><span class="answer">4</span><span class="blank">......</span></td><td><span class="answer">5</span><span class="blank">......</span></td>
+                <td><span class="answer">6</span><span class="blank">......</span></td><td><span class="answer">8</span><span class="blank">......</span></td><td><span class="answer">7</span><span class="blank">......</span></td>
+            </tr>
+            <tr>
+                <td>10 006 435</td>
+                <td><span class="answer">0</span><span class="blank">......</span></td><td><span class="answer">1</span><span class="blank">......</span></td><td><span class="answer">0</span><span class="blank">......</span></td>
+                <td><span class="answer">0</span><span class="blank">......</span></td><td><span class="answer">0</span><span class="blank">......</span></td><td><span class="answer">6</span><span class="blank">......</span></td>
+                <td><span class="answer">4</span><span class="blank">......</span></td><td><span class="answer">3</span><span class="blank">......</span></td><td><span class="answer">5</span><span class="blank">......</span></td>
+            </tr>
+            <tr>
+                <td>31 208 000</td>
+                <td><span class="answer">0</span><span class="blank">......</span></td><td><span class="answer">3</span><span class="blank">......</span></td><td><span class="answer">1</span><span class="blank">......</span></td>
+                <td><span class="answer">2</span><span class="blank">......</span></td><td><span class="answer">0</span><span class="blank">......</span></td><td><span class="answer">8</span><span class="blank">......</span></td>
+                <td><span class="answer">0</span><span class="blank">......</span></td><td><span class="answer">0</span><span class="blank">......</span></td><td><span class="answer">0</span><span class="blank">......</span></td>
+            </tr>
+            <tr>
+                <td>523 100 005</td>
+                <td><span class="answer">5</span><span class="blank">......</span></td><td><span class="answer">2</span><span class="blank">......</span></td><td><span class="answer">3</span><span class="blank">......</span></td>
+                <td><span class="answer">1</span><span class="blank">......</span></td><td><span class="answer">0</span><span class="blank">......</span></td><td><span class="answer">0</span><span class="blank">......</span></td>
+                <td><span class="answer">0</span><span class="blank">......</span></td><td><span class="answer">0</span><span class="blank">......</span></td><td><span class="answer">5</span><span class="blank">......</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p><b>Bài 2.</b> Cho biết: <b>Một nghìn triệu gọi là một tỉ.</b> Viết vào chỗ trống.</p>
+    <table>
+        <thead><tr><th style="width:35%;">Viết</th><th>Đọc</th></tr></thead>
+        <tbody>
+            <tr><td style="text-align:center;">1 000 000 000</td><td style="text-align:center;">Một tỉ</td></tr>
+            <tr><td style="text-align:center;">5 000 000 000</td><td style="text-align:center;"><span class="answer">Năm tỉ</span><span class="blank">......</span></td></tr>
+            <tr><td style="text-align:center;">315 000 000 000</td><td style="text-align:center;"><span class="answer">Ba trăm mười lăm tỉ</span><span class="blank">......</span></td></tr>
+            <tr><td style="text-align:center;"><span class="answer">550 000 000 000</span><span class="blank">......</span></td><td style="text-align:center;">Năm trăm năm mươi tỉ</td></tr>
+        </tbody>
+    </table>
+
+    <p><b>Bài 3.</b> Điền chữ hoặc số thích hợp vào chỗ chấm</p>
+    <div class="content-area" style="padding-left:1rem;">
+        <p>a. Trong số 537 129:<br>
+        - Chữ số 7 ở hàng <span class="answer">nghìn</span><span class="blank">......</span>, có giá trị là <span class="answer">7 000</span><span class="blank">......</span> và thuộc lớp <span class="answer">nghìn</span><span class="blank">......</span><br>
+        - Chữ số 1 ở hàng <span class="answer">trăm</span><span class="blank">......</span>, có giá trị là <span class="answer">100</span><span class="blank">......</span> và thuộc lớp <span class="answer">đơn vị</span><span class="blank">......</span></p>
+        <p>b. Trong số 2 387 406:<br>
+        - Chữ số 3 ở hàng <span class="answer">trăm nghìn</span><span class="blank">......</span>, có giá trị là <span class="answer">300 000</span><span class="blank">......</span> và thuộc lớp <span class="answer">nghìn</span><span class="blank">......</span><br>
+        - Chữ số 2 ở hàng <span class="answer">triệu</span><span class="blank">......</span>, có giá trị là <span class="answer">2 000 000</span><span class="blank">......</span> và thuộc lớp <span class="answer">triệu</span><span class="blank">......</span></p>
+    </div>
+
+    <p><b>Bài 4.</b> Viết các số sau:</p>
+    <div class="content-area" style="padding-left:1rem;">
+        <p>a. Tám triệu không trăm hai mươi lăm nghìn không trăm linh chín: <span class="answer">8 025 009</span><span class="blank">......</span><br>
+        b. Hai mươi sáu triệu tám trăm linh năm nghìn không trăm linh bảy: <span class="answer">26 805 007</span><span class="blank">......</span><br>
+        c. Bảy mươi tư triệu không trăm linh năm nghìn sáu trăm linh một: <span class="answer">74 005 601</span><span class="blank">......</span><br>
+        d. Chín triệu không trăm linh bảy nghìn tám trăm bốn mươi hai: <span class="answer">9 007 842</span><span class="blank">......</span></p>
+    </div>
+
+    <p><b>Bài 5.</b> Viết số, biết số đó gồm:</p>
+    <div class="content-area" style="padding-left:1rem;">
+        <p>a. 7 triệu, 6 trăm nghìn, 6 chục nghìn, 5 trăm, 8 chục và 9 đơn vị: <span class="answer">7 660 589</span><span class="blank">......</span><br>
+        b. 8 trăm triệu, 4 triệu, 3 trăm nghìn, 8 nghìn, và 15 đơn vị: <span class="answer">804 308 015</span><span class="blank">......</span></p>
+    </div>
+
+    <p><b>Bài 6.</b> Sắp xếp theo thứ tự:</p>
+    <div class="content-area" style="padding-left:1rem;">
+        <p>a) Từ bé đến lớn: 7400321; 3912249; 3934007; 569000<br>
+        <div class="answer-block answer">569 000; 3 912 249; 3 934 007; 7 400 321</div><div class="blank-block"><span class="blank-line"></span><span class="blank-line"></span></div></p>
+        <p>b) Từ lớn đến bé: 3193444; 7129028; 56023450; 689012<br>
+        <div class="answer-block answer">56 023 450; 7 129 028; 3 193 444; 689 012</div><div class="blank-block"><span class="blank-line"></span><span class="blank-line"></span></div></p>
+    </div>
+
+    <p><b>Bài 7.</b> Điền dấu &gt;, &lt;, = thích hợp</p>
+    <div class="grid-2" style="padding-left:1rem;">
+        <div>
+            <p>2 657 457 <span class="answer">&gt;</span><span class="blank">......</span> 267 001</p>
+            <p>548 289 <span class="answer">&gt;</span><span class="blank">......</span> 458 299</p>
+            <p>4 389 423 <span class="answer">&gt;</span><span class="blank">......</span> 4 389 419</p>
+        </div>
+        <div>
+            <p>234 259 <span class="answer">=</span><span class="blank">......</span> 200 000 + 34 259</p>
+            <p>813 456 <span class="answer">&lt;</span><span class="blank">......</span> 813 000 + 457</p>
+            <p>101 101 <span class="answer">&lt;</span><span class="blank">......</span> 101 100 + 10</p>
+        </div>
+    </div>
+
+    <p><b>Bài 8.</b> Từ các số 4, 5, 3, 6 viết tất cả các số có 4 chữ số khác nhau mà chữ số hàng nghìn là 4. Sắp xếp từ bé đến lớn.</p>
+    <div class="answer-block answer">4356, 4365, 4536, 4563, 4635, 4653 — đã sắp xếp từ bé đến lớn.</div><div class="blank-block"><span class="blank-line"></span><span class="blank-line"></span></div>
+
+    <p><b>Bài 9.</b> Viết số thoả mãn:</p>
+    <table>
+        <tbody>
+            <tr>
+                <td>a. Lớn nhất có bốn chữ số.</td>
+                <td class="answer-cell"><span class="answer">9999</span><span class="blank">......</span></td>
+            </tr>
+            <tr>
+                <td>b. Lớn nhất có bốn chữ số khác nhau.</td>
+                <td class="answer-cell"><span class="answer">9875</span><span class="blank">......</span></td>
+            </tr>
+            <tr>
+                <td>c. Bé nhất có năm chữ số.</td>
+                <td class="answer-cell"><span class="answer">10001</span><span class="blank">......</span></td>
+            </tr>
+            <tr>
+                <td>d. Bé nhất có năm chữ số khác nhau.</td>
+                <td class="answer-cell"><span class="answer">10235</span><span class="blank">......</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p><b>Câu 2.</b> Từ các chữ số 0; 2; 5; 6; 8; 9, viết:</p>
+    <table>
+        <tbody>
+            <tr><td>a. Số chẵn lớn nhất có bốn chữ số khác nhau.</td><td class="answer-cell"><span class="answer">9862</span><span class="blank">......</span></td></tr>
+            <tr><td>b. Số lẻ bé nhất có ba chữ số khác nhau.</td><td class="answer-cell"><span class="answer">205</span><span class="blank">......</span></td></tr>
+        </tbody>
+    </table>
+
+    <p><b>Câu 3.</b> Số tự nhiên lớn nhất có bốn chữ số, tổng các chữ số là 29.</p>
+    <div class="answer-block answer">29 = 9 + 9 + 9 + 2 → Số cần tìm: <b>9992</b></div><div class="blank-block"><span class="blank-line"></span><span class="blank-line"></span></div>
+
+    <p><b>Câu 4.</b> Số tự nhiên bé nhất có các chữ số khác nhau, tổng các chữ số là 29.</p>
+    <div class="answer-block answer">Ít chữ số nhất → chữ số lớn nhất. 29 = 9 + 8 + 7 + 5 → Số cần tìm: <b>5789</b></div><div class="blank-block"><span class="blank-line"></span><span class="blank-line"></span></div>
+
+    <p><b>Câu 5.</b> Cho số 905 678 725. Xoá đi 5 chữ số, giữ nguyên thứ tự:</p>
+    <table>
+        <tbody>
+            <tr><td>a. Bé nhất.</td><td class="answer-cell"><span class="answer">5625</span><span class="blank">......</span></td></tr>
+            <tr><td>b. Lớn nhất.</td><td class="answer-cell"><span class="answer">9875</span><span class="blank">......</span></td></tr>
+        </tbody>
+    </table>
+
+    <p><b>Bài 10.</b> Viết các số có hai chữ số, hiệu các chữ số là 4. Tìm hiệu của số lớn nhất và bé nhất.</p>
+    <div class="answer-block answer">4 = 9-5 = 8-4 = 7-3 = 6-2 = 5-1 = 4-0<br>Các số: 95; 59; 84; 48; 73; 37; 62; 26; 51; 15; 40<br>Hiệu: 95 - 15 = <b>80</b></div><div class="blank-block"><span class="blank-line"></span><span class="blank-line"></span></div>
+    <div class="page-footer"><span>Câu lạc bộ Toán học Muôn màu</span><span>Trang 2-4</span></div>
+</div>
+</div>
+<script>
+function checkPw(){var p=document.getElementById('pwInput').value;
+if(p==='000000'){document.body.classList.remove('mode-locked');document.body.classList.add('mode-unlocked');
+document.getElementById('passwordGate').style.display='none';}
+else{document.getElementById('pwError').textContent='Sai mật khẩu!';
+document.getElementById('pwInput').value='';document.getElementById('pwInput').focus();}}
+document.addEventListener('DOMContentLoaded',function(){var i=document.getElementById('pwInput');if(i)i.focus();});
+</script>
+</body>
+</html>
