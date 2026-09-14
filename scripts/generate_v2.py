@@ -3,7 +3,7 @@ import os
 
 CSS_REL = "../../styles/shared.css"
 
-def hdr(title, date, teacher="Đỗ Thị Thủy"):
+def hdr(title, date):
     return f'''<div class="page-card">
     <div class="page-header">
         <div class="brand"><span class="brand-name">CMATH</span><span class="brand-sub">Education</span></div>
@@ -11,7 +11,6 @@ def hdr(title, date, teacher="Đỗ Thị Thủy"):
             <div class="lesson-title">{title}</div>
             <div><b>Môn:</b> Toán 4 &nbsp; <b>Lớp:</b> 4M0</div>
             <div><b>Ngày:</b> {date}</div>
-            <div><b>GV:</b> {teacher}</div>
         </div>
     </div>'''
 

@@ -5,7 +5,7 @@ from generate_v2 import hdr, foot, gen_theory
 
 THEORY = hdr("ĐỌC, VIẾT SỐ TỰ NHIÊN", "05/09/2026") + '''
     <div style="text-align:center; margin-bottom:1.5rem;">
-        <img src="images_ndbh_05/page_09.png" alt="Mindmap – Củng cố kiến thức về số tự nhiên" style="max-width:100%; border-radius:0.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+        <img src="images_ndbh_05/page_09_cropped.png" alt="Mindmap – Củng cố kiến thức về số tự nhiên" style="max-width:100%; border-radius:0.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
     </div>
     <div class="section-title">A. Kiến thức cần nhớ</div>
     <h2 style="text-align:center; margin:1rem 0; font-size:1.3rem;">Củng cố kiến thức về số tự nhiên</h2>
