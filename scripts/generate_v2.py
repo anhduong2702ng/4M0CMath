@@ -1,16 +1,14 @@
-"""CMath HTML Generator v2 - Compact single-file approach."""
+"""HTML Generator v2 - Compact single-file approach."""
 import os
 
 CSS_REL = "../../styles/shared.css"
 
 def hdr(title, date):
     return f'''<div class="page-card">
-    <div class="page-header">
-        <div class="brand"><span class="brand-name">CMATH</span><span class="brand-sub">Education</span></div>
-        <div class="meta-info">
+    <div class="page-header" style="justify-content:flex-start;">
+        <div class="meta-info" style="width:100%;text-align:left;">
             <div class="lesson-title">{title}</div>
-            <div><b>Môn:</b> Toán 4 &nbsp; <b>Lớp:</b> 4M0</div>
-            <div><b>Ngày:</b> {date}</div>
+            <div><b>Môn:</b> Toán 4 &nbsp; <b>Lớp:</b> 4M0 &nbsp; <b>Ngày:</b> {date}</div>
         </div>
     </div>'''
 
@@ -47,8 +45,20 @@ document.addEventListener('DOMContentLoaded',function(){var i=document.getElemen
 
 TOOLBAR = '''<div class="toolbar">
 <button onclick="document.body.classList.toggle('eink');this.classList.toggle('active')">📖 E-ink</button>
-<button onclick="window.print()">🖨️ In</button>
+<button onclick="printSheet(false)">🖨️ In đề bài</button>
+<button onclick="printSheet(true)">🖨️ In có đáp án</button>
 </div>'''
+
+PRINT_SCRIPT = '''<script>
+function printSheet(withAnswers){
+var b=document.body;
+var had=b.className;
+b.classList.remove('mode-locked','mode-unlocked','mode-questions');
+b.classList.add(withAnswers?'mode-unlocked':'mode-questions');
+window.print();
+b.className=had;
+}
+</script>'''
 
 def wrap(title, body_cls, content, script=""):
     return f'''<!DOCTYPE html>
@@ -76,13 +86,13 @@ def write_file(path, html):
     print(f"  Generated: {path}")
 
 def gen_theory(title, content, path):
-    write_file(path, wrap(title, "", content))
+    write_file(path, wrap(title, "", content, PRINT_SCRIPT))
 
 def gen_debai(title, content, path):
-    write_file(path, wrap(title, "mode-questions", content))
+    write_file(path, wrap(title, "mode-questions", content, PRINT_SCRIPT))
 
 def gen_btvn(title, content, path):
-    write_file(path, wrap(title, "mode-locked", pw_gate() + content, PW_SCRIPT))
+    write_file(path, wrap(title, "mode-locked", pw_gate() + content, PW_SCRIPT + PRINT_SCRIPT))
 
 if __name__ == "__main__":
     # Content will be loaded from content modules

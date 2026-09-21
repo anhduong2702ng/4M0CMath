@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4M0. NDBH 19-09</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles/shared.css">
+</head>
+<body class="mode-locked">
+<div class="toolbar">
+<button onclick="document.body.classList.toggle('eink');this.classList.toggle('active')">📖 E-ink</button>
+<button onclick="printSheet(false)">🖨️ In đề bài</button>
+<button onclick="printSheet(true)">🖨️ In có đáp án</button>
+</div>
+<div class="page-container">
+<div class="password-gate" id="passwordGate">
+    <div class="gate-icon">🔒</div>
+    <div class="gate-title">Đáp án được bảo vệ</div>
+    <div class="gate-desc">Dành cho Bố Mẹ — Nhập mật khẩu để xem đáp án</div>
+    <div><input type="password" id="pwInput" placeholder="••••••" maxlength="6" onkeydown="if(event.key==='Enter')checkPw()">
+    <button onclick="checkPw()">Mở khóa</button></div>
+    <div class="gate-error" id="pwError"></div>
+</div><div class="page-card">
+    <div class="page-header" style="justify-content:flex-start;">
+        <div class="meta-info" style="width:100%;text-align:left;">
+            <div class="lesson-title">ĐỔI ĐƠN VỊ ĐO KHỐI LƯỢNG, THỜI GIAN</div>
+            <div><b>Môn:</b> Toán 4 &nbsp; <b>Lớp:</b> 4M0 &nbsp; <b>Ngày:</b> 19/09/2026</div>
+        </div>
+    </div>
+    <div class="section-title">Đơn vị đo khối lượng</div>
+    <div class="sub-title">Kiến thức cần nhớ</div>
+    <p><i>Bảng đơn vị đo khối lượng:</i></p>
+    <table>
+        <thead>
+            <tr><th colspan="3">Lớn hơn ki-lô-gam</th><th>Ki-lô-gam</th><th colspan="3">Nhỏ hơn ki-lô-gam</th></tr>
+            <tr><th>tấn</th><th>tạ</th><th>yến</th><th>kg</th><th>hg</th><th>dag</th><th>g</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>1 tấn</td><td>1 tạ</td><td>1 yến</td><td>1 kg</td><td>1 hg</td><td>1 dag</td><td>1 g</td></tr>
+            <tr><td>= 10 tạ</td><td>= 10 yến</td><td>= 10 kg</td><td>= 10 hg</td><td>= 10 dag</td><td>= 10 g</td><td></td></tr>
+            <tr><td>= 1000 kg</td><td>= 100 kg</td><td></td><td>= 1000 g</td><td>= 100 g</td><td></td><td></td></tr>
+        </tbody>
+    </table>
+    <p><i><b>Cách đổi đơn vị đo khối lượng:</b></i></p>
+    <p>Cũng giống như số tự nhiên, các phép cộng, trừ với số đo khối lượng chỉ được thực hiện với các số có cùng tên đơn vị. Quy tắc thực hiện phép tính giống hoàn toàn như khi thực hiện với số tự nhiên.</p>
+    <div class="sub-title">Bài tập thực hành</div>
+    <div class="box-blue" style="text-align:center;margin-bottom:var(--space-md);">
+        <b>Các đơn vị đo <u>liền kề</u> hơn kém nhau 10 lần</b>
+    </div>
+    <div class="grid-2" style="margin-bottom:var(--space-md);">
+        <div class="box-green">
+            <div style="text-align:center;font-weight:700;margin-bottom:var(--space-sm);"><u>Đổi xuôi</u></div>
+            <p>(từ đơn vị lớn sang đơn vị nhỏ):</p>
+            <p>Nhân số cần đổi với 10; 100; 1000,&hellip;</p>
+            <p>VD: 3 tạ = 300 kg</p>
+            <div class="box-highlight" style="margin-top:var(--space-sm);">
+                <p><b>5 tấn 6 yến = 5060 kg</b></p>
+                <p style="font-size:0.85rem;color:var(--text-gray);">5000 kg + 60 kg</p>
+            </div>
+        </div>
+        <div class="box-orange">
+            <div style="text-align:center;font-weight:700;margin-bottom:var(--space-sm);"><u>Đổi ngược</u></div>
+            <p>(từ đơn vị nhỏ sang đơn vị lớn):</p>
+            <p>Chia số cần đổi cho 10; 100; 1000&hellip;</p>
+            <p>VD: 5100 kg = 51 tạ</p>
+            <div class="box-highlight" style="margin-top:var(--space-sm);">
+                <p><b>15 880 kg = 15 tấn 8 tạ 8 yến</b></p>
+                <p style="font-size:0.85rem;color:var(--text-gray);">tấn &rarr; tạ &rarr; yến &rarr; kg</p>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer"><span>Câu lạc bộ Toán học Muôn màu</span><span>Trang 1</span></div>
+</div>
+<div class="page-card">
+    <div class="page-header" style="justify-content:flex-start;">
+        <div class="meta-info" style="width:100%;text-align:left;">
+            <div class="lesson-title">ĐỔI ĐƠN VỊ ĐO KHỐI LƯỢNG (tiếp)</div>
+            <div><b>Môn:</b> Toán 4 &nbsp; <b>Lớp:</b> 4M0 &nbsp; <b>Ngày:</b> 19/09/2026</div>
+        </div>
+    </div>
+    <p><b>Bài 1.</b> Hãy điền số thích hợp vào ô bên dưới:</p>
+    <table>
+        <thead>
+            <tr><th colspan="3">Lớn hơn ki-lô-gam</th><th>Ki-lô-gam</th><th colspan="3">Nhỏ hơn ki-lô-gam</th></tr>
+            <tr><th>Tấn</th><th>Tạ</th><th>Yến</th><th>kg</th><th>hg</th><th>dag</th><th>g</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>1 tấn</td><td>1 tạ</td><td>1 yến</td><td>1 kg</td><td>1 hg</td><td>1 dag</td><td>1 g</td></tr>
+            <tr>
+                <td>= <span class="answer">10</span><span class="blank">......</span> tạ</td>
+                <td>= <span class="answer">10</span><span class="blank">......</span> yến</td>
+                <td>= <span class="answer">10</span><span class="blank">......</span> kg</td>
+                <td>= <span class="answer">10</span><span class="blank">......</span> hg</td>
+                <td>= <span class="answer">10</span><span class="blank">......</span> dag</td>
+                <td>= <span class="answer">10</span><span class="blank">......</span> g</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>= <span class="answer">100</span><span class="blank">......</span> yến</td>
+                <td>= <span class="answer">100</span><span class="blank">......</span> kg</td>
+                <td></td>
+                <td>= <span class="answer">100</span><span class="blank">......</span> dag</td>
+                <td>= <span class="answer">100</span><span class="blank">......</span> g</td>
+                <td></td><td></td>
+            </tr>
+            <tr>
+                <td>= <span class="answer">1000</span><span class="blank">......</span> kg</td>
+                <td></td><td></td>
+                <td>= <span class="answer">1000</span><span class="blank">......</span> g</td>
+                <td></td><td></td><td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p><b>Bài 2.</b> Viết số thích hợp vào chỗ chấm:</p>
+    <div class="content-area" style="padding-left:1rem;">
+        <div class="grid-2">
+            <div>
+                <p>a) 1 yến = <span class="answer">10</span><span class="blank">......</span> kg</p>
+                <p>1 yến 7 kg = <span class="answer">17</span><span class="blank">......</span> kg</p>
+                <p>8 yến = <span class="answer">80</span><span class="blank">......</span> kg</p>
+            </div>
+            <div>
+                <p>5 yến = <span class="answer">50</span><span class="blank">......</span> kg</p>
+                <p>10 kg = <span class="answer">1</span><span class="blank">......</span> yến</p>
+                <p>5 yến 3 kg = <span class="answer">53</span><span class="blank">......</span> kg</p>
+            </div>
+        </div>
+        <div class="grid-2" style="margin-top:var(--space-sm);">
+            <div>
+                <p>b) 1 tạ = <span class="answer">10</span><span class="blank">......</span> yến;</p>
+                <p>1 tạ = <span class="answer">100</span><span class="blank">......</span> kg;</p>
+                <p>4 tạ = <span class="answer">40</span><span class="blank">......</span> yến;</p>
+                <p>9 tạ = <span class="answer">900</span><span class="blank">......</span> kg;</p>
+            </div>
+            <div>
+                <p>10 yến = <span class="answer">1</span><span class="blank">......</span> tạ;</p>
+                <p>100 kg = <span class="answer">1</span><span class="blank">......</span> tạ</p>
+                <p>2 tạ = <span class="answer">200</span><span class="blank">......</span> kg;</p>
+                <p>4 tạ 60 kg = <span class="answer">460</span><span class="blank">......</span> kg</p>
+            </div>
+        </div>
+    </div>
+
+    <p><b>Bài 3.</b> Viết số thích hợp vào chỗ chấm:</p>
+    <div class="content-area" style="padding-left:1rem;">
+        <div class="grid-2">
+            <div>
+                <p>5 tạ 8 yến = <span class="answer">580</span><span class="blank">......</span> kg</p>
+                <p>17 tấn 3 tạ = <span class="answer">1730</span><span class="blank">......</span> yến</p>
+                <p>12 tấn 790 kg = <span class="answer">12 790</span><span class="blank">......</span> kg</p>
+                <p>5 tấn 8 tạ = <span class="answer">5800</span><span class="blank">......</span> kg</p>
+                <p>99 kg 80 hg = <span class="answer">1070</span><span class="blank">......</span> hg</p>
+                <p>11 307 kg = <span class="answer">11</span><span class="blank">......</span> tấn <span class="answer">307</span><span class="blank">......</span> kg</p>
+                <p>14 763 g = <span class="answer">14</span><span class="blank">......</span> kg <span class="answer">763</span><span class="blank">......</span> g</p>
+            </div>
+            <div>
+                <p>1 yến 230 kg = <span class="answer">240</span><span class="blank">......</span> kg</p>
+                <p>7 tấn 23 kg = <span class="answer">7023</span><span class="blank">......</span> kg</p>
+                <p>1 tấn 108 kg = <span class="answer">1108</span><span class="blank">......</span> kg</p>
+                <p>11 kg 37 dag = <span class="answer">1137</span><span class="blank">......</span> dag</p>
+                <p>99 088 kg = <span class="answer">990</span><span class="blank">......</span> tạ <span class="answer">88</span><span class="blank">......</span> kg</p>
+                <p>29 508 kg = <span class="answer">2950</span><span class="blank">......</span> yến <span class="answer">8</span><span class="blank">......</span> kg</p>
+                <p>83 483 g = <span class="answer">83</span><span class="blank">......</span> kg <span class="answer">483</span><span class="blank">......</span> g</p>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer"><span>Câu lạc bộ Toán học Muôn màu</span><span>Trang 2</span></div>
+</div>
+<div class="page-card">
+    <div class="page-header" style="justify-content:flex-start;">
+        <div class="meta-info" style="width:100%;text-align:left;">
+            <div class="lesson-title">ĐỔI ĐƠN VỊ ĐO KHỐI LƯỢNG (tiếp)</div>
+            <div><b>Môn:</b> Toán 4 &nbsp; <b>Lớp:</b> 4M0 &nbsp; <b>Ngày:</b> 19/09/2026</div>
+        </div>
+    </div>
+    <p><b>Bài 6.</b> Viết số thích hợp vào chỗ chấm:</p>
+    <div class="content-area" style="padding-left:1rem;">
+        <div class="grid-2">
+            <div>
+                <p>1 tạ 4 yến = <span class="answer">140</span><span class="blank">......</span> kg</p>
+                <p>2 tấn 5 tạ = <span class="answer">250</span><span class="blank">......</span> yến</p>
+                <p>9 tấn 79 kg = <span class="answer">9079</span><span class="blank">......</span> kg</p>
+                <p>6 tấn 8 tạ = <span class="answer">6800</span><span class="blank">......</span> kg</p>
+                <p>24 kg 8 hg = <span class="answer">248</span><span class="blank">......</span> hg</p>
+                <p>21 009 kg = <span class="answer">21</span><span class="blank">......</span> tấn <span class="answer">9</span><span class="blank">......</span> kg</p>
+                <p>49 127 g = <span class="answer">49</span><span class="blank">......</span> kg <span class="answer">127</span><span class="blank">......</span> g</p>
+            </div>
+            <div>
+                <p>3 yến 25 kg = <span class="answer">55</span><span class="blank">......</span> kg</p>
+                <p>2 tấn 385 kg = <span class="answer">2385</span><span class="blank">......</span> kg</p>
+                <p>15 tấn 8 kg = <span class="answer">15 008</span><span class="blank">......</span> kg</p>
+                <p>15 kg 4 dag = <span class="answer">1504</span><span class="blank">......</span> dag</p>
+                <p>36 018 kg = <span class="answer">360</span><span class="blank">......</span> tạ <span class="answer">18</span><span class="blank">......</span> kg</p>
+                <p>6902 kg = <span class="answer">690</span><span class="blank">......</span> yến <span class="answer">2</span><span class="blank">......</span> kg</p>
+                <p>24 089 g = <span class="answer">24</span><span class="blank">......</span> kg <span class="answer">89</span><span class="blank">......</span> g</p>
+            </div>
+        </div>
+    </div>
+
+    <p><b>Bài 8.</b> Điền dấu (&lt; ; &gt; hoặc =) vào chỗ chấm:</p>
+    <div class="content-area" style="padding-left:1rem;">
+        <div class="grid-2">
+            <div>
+                <p>8 dag <span class="answer">=</span><span class="blank">......</span> 80 g</p>
+                <p>55 yến <span class="answer">=</span><span class="blank">......</span> 5 tạ 50 kg</p>
+                <p>7 tạ 5 kg <span class="answer">&gt;</span><span class="blank">......</span> 3500 dag</p>
+            </div>
+            <div>
+                <p>8 tấn <span class="answer">&lt;</span><span class="blank">......</span> 8100 kg</p>
+                <p>6 tạ 10 kg <span class="answer">&gt;</span><span class="blank">......</span> 4 tạ 15 hg</p>
+                <p>2900 hg <span class="answer">&gt;</span><span class="blank">......</span> 2 tạ 9 kg</p>
+            </div>
+        </div>
+    </div>
+
+    <p><b>Bài 9.</b> Điền đáp án</p>
+    <table>
+        <thead><tr><th style="width:75%;">Đề bài</th><th>Đáp án</th></tr></thead>
+        <tbody>
+            <tr>
+                <td><b>Bài 1.</b> Tính khối lượng của hình vuông biết khối lượng của mỗi hình tròn là 400 g.
+                    <div class="answer" style="font-style:italic; margin-top:0.25rem;">5 hình tròn = 5 &times; 400 = 2000 g = 2 kg<br>Hình vuông = 2000 &minus; 5 &times; 400 + &hellip; = 900 g</div>
+                </td>
+                <td class="answer-cell"><span class="answer">900 g</span><span class="blank">......</span></td>
+            </tr>
+            <tr>
+                <td><b>Bài 2*.</b> Một chai đựng dung dịch nặng 1500 g. Nếu chai đó đựng một nửa lượng dung dịch thì nặng 850 g. Hỏi chai rỗng nặng bao nhiêu gam?
+                    <div class="answer" style="font-style:italic; margin-top:0.25rem;">Nửa lượng dung dịch: 1500 &minus; 850 = 650 g<br>Cả lượng dung dịch: 650 &times; 2 = 1300 g<br>Chai rỗng: 1500 &minus; 1300 = 200 g</div>
+                </td>
+                <td class="answer-cell"><span class="answer">200 g</span><span class="blank">......</span></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="page-footer"><span>Câu lạc bộ Toán học Muôn màu</span><span>Trang 3</span></div>
+</div>
+<div class="page-card">
+    <div class="page-header" style="justify-content:flex-start;">
+        <div class="meta-info" style="width:100%;text-align:left;">
+            <div class="lesson-title">ĐỔI ĐƠN VỊ ĐO KHỐI LƯỢNG (tiếp)</div>
+            <div><b>Môn:</b> Toán 4 &nbsp; <b>Lớp:</b> 4M0 &nbsp; <b>Ngày:</b> 19/09/2026</div>
+        </div>
+    </div>
+    <p><b>Bài 3.</b> Có ba thửa ruộng, biết tổng sản lượng thóc thu được trên thửa thứ nhất và thửa thứ hai là 950 kg, trên thửa thứ hai và thửa thứ ba là 1050 kg, trên thửa thứ ba và thửa thứ nhất là 1100 kg.</p>
+    <p>Tính lượng thóc thu được trên mỗi thửa ruộng.</p>
+    <div class="answer-block answer">Thửa 1 + Thửa 2 = 950 kg<br>Thửa 2 + Thửa 3 = 1050 kg<br>Thửa 3 + Thửa 1 = 1100 kg<br>(Thửa 1 + Thửa 2 + Thửa 3) &times; 2 = 950 + 1050 + 1100 = 3100<br>Thửa 1 + Thửa 2 + Thửa 3 = 3100 : 2 = 1550 kg<br><br>Thửa 1 = 1550 &minus; 1050 = <b>500 kg</b><br>Thửa 2 = 1550 &minus; 1100 = <b>450 kg</b><br>Thửa 3 = 1550 &minus; 950 = <b>600 kg</b></div><div class="blank-block"><span class="blank-line"></span><span class="blank-line"></span></div>
+
+    <hr class="divider">
+
+    <div class="section-title">Đơn vị đo thời gian</div>
+    <div class="sub-title">Kiến thức cần nhớ</div>
+    <div class="content-area">
+        <p>a) <b>Giờ - phút – giây:</b> &emsp; 1 giờ = 60 phút; &emsp; 1 phút = 60 giây</p>
+        <p>b) <b>Thế kỉ:</b></p>
+        <p>1 thế kỉ = 100 năm</p>
+        <ul style="list-style:none;padding-left:1rem;">
+            <li>- Từ năm 1 đến năm 100 là thế kỉ 1</li>
+            <li>- Từ năm 101 đến năm 200 là thế kỉ 2</li>
+            <li>- &hellip;</li>
+            <li>- Từ năm 1901 đến năm 2000 là thế kỉ 20</li>
+            <li>- Từ năm 2001 đến năm 2100 là thế kỉ 21</li>
+        </ul>
+        <p><b>Chú ý:</b> Các năm tròn trăm, tròn nghìn như 100, 1300, 1600, 2000&hellip; thuộc thế kỉ 1, 13, 16, 20&hellip;</p>
+    </div>
+
+    <div class="box-yellow" style="margin:var(--space-md) 0;">
+        <b>Cách xác định năm thuộc thế kỉ:</b><br>
+        VD: Năm <b>2015</b> thuộc thế kỉ <b>21</b> (20 + 1)<br>
+        Năm <b>199</b> thuộc thế kỉ <b>2</b> (1 + 1)<br>
+        Năm <b>99</b> thuộc thế kỉ <b>1</b> (0 + 1)
+    </div>
+
+    <div class="sub-title">Bài tập thực hành</div>
+    <p><b>Bài 1.</b> Điền số thích hợp vào chỗ chấm:</p>
+    <table>
+        <thead><tr><th style="width:10%;">&nbsp;</th><th style="width:65%;">ĐỀ BÀI</th><th>TRẢ LỜI</th></tr></thead>
+        <tbody>
+            <tr><td><b>1.</b></td><td>7 giờ 20 phút = &hellip; phút</td><td class="answer-cell"><span class="answer">440</span><span class="blank">......</span></td></tr>
+            <tr><td><b>2.</b></td><td>11 phút 54 giây = &hellip; giây</td><td class="answer-cell"><span class="answer">714</span><span class="blank">......</span></td></tr>
+            <tr><td><b>3.</b></td><td><span style="display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;font-size:0.85em;margin:0 0.15em;line-height:1;"><span style="border-bottom:1px solid currentColor;padding:0 0.15em;">1</span><span style="padding:0 0.15em;">6</span></span> giờ = &hellip; giây</td><td class="answer-cell"><span class="answer">600</span><span class="blank">......</span></td></tr>
+        </tbody>
+    </table>
+    <div class="page-footer"><span>Câu lạc bộ Toán học Muôn màu</span><span>Trang 4</span></div>
+</div>
+<div class="page-card">
+    <div class="page-header" style="justify-content:flex-start;">
+        <div class="meta-info" style="width:100%;text-align:left;">
+            <div class="lesson-title">ĐƠN VỊ ĐO THỜI GIAN (tiếp)</div>
+            <div><b>Môn:</b> Toán 4 &nbsp; <b>Lớp:</b> 4M0 &nbsp; <b>Ngày:</b> 19/09/2026</div>
+        </div>
+    </div>
+    <table>
+        <thead><tr><th style="width:10%;">&nbsp;</th><th style="width:65%;">ĐỀ BÀI</th><th>TRẢ LỜI</th></tr></thead>
+        <tbody>
+            <tr><td><b>4.</b></td><td>500 năm = &hellip; thế kỉ</td><td class="answer-cell"><span class="answer">5</span><span class="blank">......</span></td></tr>
+            <tr><td><b>5.</b></td><td>10 thế kỉ = &hellip; năm</td><td class="answer-cell"><span class="answer">1000</span><span class="blank">......</span></td></tr>
+            <tr><td><b>6.</b></td><td>Quang Trung đại phá quân Thanh vào năm 1789. Năm đó thuộc thế kỉ nào?</td><td class="answer-cell"><span class="answer">18</span><span class="blank">......</span></td></tr>
+            <tr><td><b>7.</b></td><td>Lễ kỉ niệm 600 năm ngày sinh của Nguyễn Trãi được tổ chức vào năm 1980. Như vậy Nguyễn Trãi sinh năm nào? Năm đó thuộc thế kỉ nào?</td><td class="answer-cell"><span class="answer">Sinh năm 1380<br>Thế kỉ 14</span><span class="blank">......</span></td></tr>
+            <tr><td><b>8.</b></td><td>Năm 40, Hai Bà Trưng phất cờ khởi nghĩa chống lại ách thống trị nhà Hán. Năm đó thuộc thế kỉ nào?</td><td class="answer-cell"><span class="answer">1</span><span class="blank">......</span></td></tr>
+            <tr><td><b>9.</b></td><td>Đinh Bộ Lĩnh dẹp loạn 12 sứ quân, thống nhất đất nước vào năm 968. Năm đó thuộc thế kỉ nào?</td><td class="answer-cell"><span class="answer">10</span><span class="blank">......</span></td></tr>
+            <tr><td><b>10.</b></td><td>Lê Lợi lên ngôi vua năm 1428. Năm đó thuộc thế kỉ nào?</td><td class="answer-cell"><span class="answer">15</span><span class="blank">......</span></td></tr>
+            <tr><td><b>11.</b></td><td>a) 1 năm thường có &hellip; ngày<br>b) 1 năm nhuận có &hellip; ngày</td><td class="answer-cell"><span class="answer">a) 365<br>b) 366</span><span class="blank">......</span></td></tr>
+            <tr><td><b>12.</b></td><td>Thế kỉ XX có năm 2000 là năm nhuận. Vậy trong thế kỉ XXI sẽ có &hellip; năm nhuận.</td><td class="answer-cell"><span class="answer">25</span><span class="blank">......</span></td></tr>
+            <tr><td><b>13.</b></td><td>Bắt đầu từ năm 1980 đến hết năm 2021 có &hellip; năm nhuận.</td><td class="answer-cell"><span class="answer">11</span><span class="blank">......</span></td></tr>
+            <tr><td><b>14.</b></td><td>5 thế kỉ 15 năm có &hellip; tháng.</td><td class="answer-cell"><span class="answer">6180</span><span class="blank">......</span></td></tr>
+            <tr><td><b>15.</b></td><td>&gt;, &lt;, =: &ensp; 900 tháng &hellip; <span style="display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;font-size:0.85em;margin:0 0.15em;line-height:1;"><span style="border-bottom:1px solid currentColor;padding:0 0.15em;">1</span><span style="padding:0 0.15em;">4</span></span> thế kỉ + 40 năm</td><td class="answer-cell"><span class="answer">&gt;</span><span class="blank">......</span></td></tr>
+        </tbody>
+    </table>
+
+    <p style="margin-top:var(--space-lg);"><b>Bài 2.</b> Viết số thích hợp vào chỗ chấm:</p>
+    <div class="content-area" style="padding-left:1rem;">
+        <div class="grid-3">
+            <div>
+                <p>a) 1 phút = <span class="answer">60</span><span class="blank">......</span> giây</p>
+                <p>11 phút = <span class="answer">660</span><span class="blank">......</span> giây</p>
+            </div>
+            <div>
+                <p>b) 3 phút 15 giây = <span class="answer">195</span><span class="blank">......</span> giây</p>
+                <p>7 phút 29 giây = <span class="answer">449</span><span class="blank">......</span> giây</p>
+            </div>
+            <div>
+                <p>c) <span style="display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;font-size:0.85em;margin:0 0.15em;line-height:1;"><span style="border-bottom:1px solid currentColor;padding:0 0.15em;">1</span><span style="padding:0 0.15em;">3</span></span> giờ = <span class="answer">20</span><span class="blank">......</span> phút</p>
+                <p><span style="display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;font-size:0.85em;margin:0 0.15em;line-height:1;"><span style="border-bottom:1px solid currentColor;padding:0 0.15em;">1</span><span style="padding:0 0.15em;">5</span></span> giờ = <span class="answer">12</span><span class="blank">......</span> phút</p>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer"><span>Câu lạc bộ Toán học Muôn màu</span><span>Trang 5</span></div>
+</div>
+<div class="page-card">
+    <div class="page-header" style="justify-content:flex-start;">
+        <div class="meta-info" style="width:100%;text-align:left;">
+            <div class="lesson-title">ĐƠN VỊ ĐO THỜI GIAN (tiếp)</div>
+            <div><b>Môn:</b> Toán 4 &nbsp; <b>Lớp:</b> 4M0 &nbsp; <b>Ngày:</b> 19/09/2026</div>
+        </div>
+    </div>
+    <div class="content-area" style="padding-left:1rem;">
+        <div class="grid-3">
+            <div>
+                <p>8 phút = <span class="answer">480</span><span class="blank">......</span> giây</p>
+                <p>1 giờ = <span class="answer">60</span><span class="blank">......</span> phút</p>
+                <p>9 giờ = <span class="answer">540</span><span class="blank">......</span> phút</p>
+                <p>1 giờ = <span class="answer">3600</span><span class="blank">......</span> giây</p>
+            </div>
+            <div>
+                <p>10 phút 35 giây = <span class="answer">635</span><span class="blank">......</span> giây</p>
+                <p>6 giờ 45 phút = <span class="answer">405</span><span class="blank">......</span> phút</p>
+                <p>11 giờ 28 phút = <span class="answer">688</span><span class="blank">......</span> phút</p>
+                <p>2 giờ 15 phút = <span class="answer">8100</span><span class="blank">......</span> giây</p>
+            </div>
+            <div>
+                <p><span style="display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;font-size:0.85em;margin:0 0.15em;line-height:1;"><span style="border-bottom:1px solid currentColor;padding:0 0.15em;">1</span><span style="padding:0 0.15em;">4</span></span> giờ = <span class="answer">15</span><span class="blank">......</span> phút</p>
+                <p><span style="display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;font-size:0.85em;margin:0 0.15em;line-height:1;"><span style="border-bottom:1px solid currentColor;padding:0 0.15em;">1</span><span style="padding:0 0.15em;">2</span></span> phút = <span class="answer">30</span><span class="blank">......</span> giây</p>
+                <p><span style="display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;font-size:0.85em;margin:0 0.15em;line-height:1;"><span style="border-bottom:1px solid currentColor;padding:0 0.15em;">1</span><span style="padding:0 0.15em;">3</span></span> phút = <span class="answer">20</span><span class="blank">......</span> giây</p>
+                <p><span style="display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;font-size:0.85em;margin:0 0.15em;line-height:1;"><span style="border-bottom:1px solid currentColor;padding:0 0.15em;">1</span><span style="padding:0 0.15em;">9</span></span> giờ = <span class="answer">400</span><span class="blank">......</span> giây</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <p><b>Bài 3.</b> Bạn Bình ngồi học 2 môn Toán và Tiếng Việt. Môn Toán bạn Bình học trong 3600 giây; môn Tiếng Việt bạn Bình học trong 1 giờ 11 phút. Hỏi bạn Bình ngồi học cả 2 môn trong bao nhiêu phút?</p>
+    <div class="answer-block answer">Đổi: 3600 giây = 60 phút<br>1 giờ 11 phút = 71 phút<br>Số phút Bình học 2 môn là:<br>60 + 71 = 131 (phút)<br><b>Đáp số: 131 phút</b></div><div class="blank-block"><span class="blank-line"></span><span class="blank-line"></span></div>
+
+    <hr class="divider">
+    <p><b>Chữa bài sai</b></p>
+    <div style="margin-top:var(--space-sm);">
+        <span class="blank-line"></span>
+        <span class="blank-line"></span>
+        <span class="blank-line"></span>
+        <span class="blank-line"></span>
+        <span class="blank-line"></span>
+    </div>
+    <div class="page-footer"><span>Câu lạc bộ Toán học Muôn màu</span><span>Trang 6</span></div>
+</div>
+</div>
+<script>
+function checkPw(){var p=document.getElementById('pwInput').value;
+if(p==='000000'){document.body.classList.remove('mode-locked');document.body.classList.add('mode-unlocked');
+document.getElementById('passwordGate').style.display='none';}
+else{document.getElementById('pwError').textContent='Sai mật khẩu!';
+document.getElementById('pwInput').value='';document.getElementById('pwInput').focus();}}
+document.addEventListener('DOMContentLoaded',function(){var i=document.getElementById('pwInput');if(i)i.focus();});
+</script><script>
+function printSheet(withAnswers){
+var b=document.body;
+var had=b.className;
+b.classList.remove('mode-locked','mode-unlocked','mode-questions');
+b.classList.add(withAnswers?'mode-unlocked':'mode-questions');
+window.print();
+b.className=had;
+}
+</script>
+</body>
+</html>

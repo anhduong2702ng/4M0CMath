@@ -456,11 +456,7 @@ DATA = {
             """
 <div class="slide">
     <div class="slide-header" style="align-items: flex-start; padding-bottom: 0.5cqw; margin-bottom: 1cqw; border-bottom: none;">
-        <div style="display: flex; gap: 1cqw; align-items: center;">
-            <div style="font-size: 2.5cqw; font-weight: 800; color: #facc15;">CMATH</div>
-            <div style="font-size: 1.2cqw; font-weight: bold; color: #64748b; letter-spacing: 0.2cqw;">EDUCATION</div>
-        </div>
-        <div style="text-align: right; font-size: 1.2cqw; line-height: 1.5; color: #000;">
+        <div style="text-align: left; font-size: 1.2cqw; line-height: 1.5; color: #000;">
             <div style="font-size: 1.8cqw; font-weight: bold;">ĐỌC, VIẾT SỐ TỰ NHIÊN</div>
             <div><b>Môn:</b> Toán 4 &nbsp;&nbsp; <b>Lớp:</b> 4M0</div>
             <div><b>Ngày học:</b> ngày 5 / tháng 9 / năm 2026</div>
@@ -837,11 +833,7 @@ DATA = {
             """
 <div class="slide">
     <div class="slide-header" style="align-items: flex-start; padding-bottom: 0.5cqw; margin-bottom: 1cqw; border-bottom: none;">
-        <div style="display: flex; gap: 1cqw; align-items: center;">
-            <div style="font-size: 2.5cqw; font-weight: 800; color: #facc15;">CMATH</div>
-            <div style="font-size: 1.2cqw; font-weight: bold; color: #64748b; letter-spacing: 0.2cqw;">EDUCATION</div>
-        </div>
-        <div style="text-align: right; font-size: 1.2cqw; line-height: 1.5; color: #000;">
+        <div style="text-align: left; font-size: 1.2cqw; line-height: 1.5; color: #000;">
             <div style="font-size: 1.8cqw; font-weight: bold;">BÀI TOÁN LẬP SỐ</div>
             <div><b>Môn:</b> Toán 4 &nbsp;&nbsp; <b>Lớp:</b> 4M0</div>
             <div><b>Ngày học:</b> ngày 12 / tháng 9 / năm 2026</div>

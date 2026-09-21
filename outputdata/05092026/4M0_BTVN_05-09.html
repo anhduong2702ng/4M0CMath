@@ -10,7 +10,8 @@
 <body class="mode-locked">
 <div class="toolbar">
 <button onclick="document.body.classList.toggle('eink');this.classList.toggle('active')">📖 E-ink</button>
-<button onclick="window.print()">🖨️ In</button>
+<button onclick="printSheet(false)">🖨️ In đề bài</button>
+<button onclick="printSheet(true)">🖨️ In có đáp án</button>
 </div>
 <div class="page-container">
 <div class="password-gate" id="passwordGate">
@@ -22,8 +23,7 @@
     <div class="gate-error" id="pwError"></div>
 </div><div class="page-card">
     <div class="page-header">
-        <div class="brand"><span class="brand-name">CMATH</span><span class="brand-sub">Education</span></div>
-        <div class="meta-info">
+        <div class="meta-info" style="width:100%;text-align:left;">
             <div class="lesson-title">BÀI TẬP VỀ NHÀ – ĐỌC, VIẾT SỐ TỰ NHIÊN</div>
             <div><b>Môn:</b> Toán 4 &nbsp; <b>Lớp:</b> 4M0</div>
             <div><b>Ngày:</b> 05/09/2026</div>
@@ -150,6 +150,16 @@ document.getElementById('passwordGate').style.display='none';}
 else{document.getElementById('pwError').textContent='Sai mật khẩu!';
 document.getElementById('pwInput').value='';document.getElementById('pwInput').focus();}}
 document.addEventListener('DOMContentLoaded',function(){var i=document.getElementById('pwInput');if(i)i.focus();});
+</script>
+<script>
+function printSheet(withAnswers){
+var b=document.body;
+var had=b.className;
+b.classList.remove('mode-locked','mode-unlocked','mode-questions');
+b.classList.add(withAnswers?'mode-unlocked':'mode-questions');
+window.print();
+b.className=had;
+}
 </script>
 </body>
 </html>
