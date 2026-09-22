@@ -5,7 +5,8 @@ import shutil
 PDFS = [
     ("inputdata/05092026/4M0. BTVN 05-09.pdf", "outputdata/05092026/images_btvn"),
     ("inputdata/05092026/4M0.NDBH 05-09 (2).pdf", "outputdata/05092026/images_ndbh_05"),
-    ("inputdata/12092026/4M0. NDBH 12-09.pdf", "outputdata/12092026/images_ndbh_12")
+    ("inputdata/12092026/4M0. NDBH 12-09.pdf", "outputdata/12092026/images_ndbh_12"),
+    ("inputdata/12092026/4M0.BTVN 12-09.pdf", "outputdata/12092026/images_btvn_12")
 ]
 
 def extract_pdf(pdf_path, output_dir):

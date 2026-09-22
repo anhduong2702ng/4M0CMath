@@ -22,12 +22,14 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.5;
+            font-size: clamp(17px, calc(16px + 0.25vw), 19px);
+            -webkit-text-size-adjust: 100%;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: clamp(1rem, 4vw, 2.5rem);
         }
 
         header {
@@ -38,14 +40,14 @@
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 6vw, 3rem);
             color: var(--primary);
             margin-bottom: 0.5rem;
         }
 
         .subtitle {
             color: var(--text-muted);
-            font-size: 1.1rem;
+            font-size: clamp(1.05rem, 2.5vw, 1.25rem);
         }
 
         .module-group {
@@ -53,7 +55,7 @@
         }
 
         .module-title {
-            font-size: 1.5rem;
+            font-size: clamp(1.35rem, 3vw, 1.7rem);
             font-weight: 600;
             margin-bottom: 1.5rem;
             color: var(--text-main);
@@ -71,9 +73,18 @@
             border-radius: 2px;
         }
 
+        .session-topic {
+            margin: -0.85rem 0 1.25rem 0.85rem;
+            color: var(--text-muted);
+            font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+            font-weight: 600;
+        }
+
+        .session-topic strong { color: var(--text-main); }
+
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
             gap: 1.5rem;
         }
 
@@ -88,6 +99,7 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             display: flex;
             flex-direction: column;
+            min-height: 180px;
         }
 
         .card:hover {
@@ -97,7 +109,7 @@
         }
 
         .card-type {
-            font-size: 0.875rem;
+            font-size: 0.95rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -106,17 +118,34 @@
         }
 
         .card-title {
-            font-size: 1.25rem;
+            font-size: 1.4rem;
             font-weight: 600;
             margin-bottom: 1rem;
         }
 
         .card-meta {
             margin-top: auto;
-            font-size: 0.875rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
             display: flex;
             justify-content: space-between;
+        }
+
+        .card:focus-visible {
+            outline: 3px solid rgba(37, 99, 235, 0.35);
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 640px) {
+            header {
+                margin-bottom: 2rem;
+                padding-bottom: 1.5rem;
+            }
+
+            .module-group { margin-bottom: 2rem; }
+            .grid { grid-template-columns: 1fr; gap: 1rem; }
+            .card { min-height: 0; padding: 1.25rem; }
+            .card-meta { flex-direction: column; gap: 0.35rem; }
         }
 
         @media print {
@@ -135,6 +164,7 @@
 
         <div class="module-group">
             <div class="module-title">Ngày 05/09/2026</div>
+            <div class="session-topic">Nội dung buổi học: <strong>Đọc, Viết Số Tự Nhiên</strong></div>
             <div class="grid">
                 <a href="outputdata/05092026/4M0_NDBH_05-09.html" class="card">
                     <div class="card-type">Nội dung bài học</div>
@@ -157,10 +187,19 @@
 
         <div class="module-group">
             <div class="module-title">Ngày 12/09/2026</div>
+            <div class="session-topic">Nội dung buổi học: <strong>Bài Toán Lập Số</strong></div>
             <div class="grid">
                 <a href="outputdata/12092026/4M0_NDBH_12-09.html" class="card">
                     <div class="card-type">Nội dung bài học</div>
                     <div class="card-title">4M0. NDBH 12-09</div>
+                    <div class="card-meta">
+                        <span>Bài Toán Lập Số</span>
+                        <span>12/09</span>
+                    </div>
+                </a>
+                <a href="outputdata/12092026/4M0_BTVN_12-09.html" class="card">
+                    <div class="card-type">Bài tập về nhà</div>
+                    <div class="card-title">4M0. BTVN 12-09</div>
                     <div class="card-meta">
                         <span>Bài Toán Lập Số</span>
                         <span>12/09</span>
@@ -171,6 +210,7 @@
 
         <div class="module-group">
             <div class="module-title">Ngày 19/09/2026</div>
+            <div class="session-topic">Nội dung buổi học: <strong>Đổi Đơn Vị Đo Khối Lượng, Thời Gian</strong></div>
             <div class="grid">
                 <a href="outputdata/19092026/4M0_NDBH_19-09.html" class="card">
                     <div class="card-type">Nội dung bài học</div>

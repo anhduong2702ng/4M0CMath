@@ -1,34 +1,28 @@
 ---
-name: pptx-to-html-v8
-description: Convert a Microsoft PowerPoint presentation (.pptx) to a native HTML/CSS interactive web presentation.
+name: cmath-learning-materials
+description: Convert CMath PPTX presentations or scanned PDF worksheets into responsive, menu-linked HTML in this repository.
 ---
 
-# PPTX to HTML Converter (V8 Table Engine)
+# CMath Learning Materials
 
-**The canonical version of this skill lives in
-[.agents/skills/pptx-to-html-v8/SKILL.md](.agents/skills/pptx-to-html-v8/SKILL.md) — read that one.**
-It carries the full conversion rules (Rule 1-17), the QA workflow and the known limitations;
-this file used to hold an older copy of the instructions that had silently fallen out of date.
+Route by source format and load only the matching local skill:
 
-## Layout of this repository
+- **PPTX:** read [`.agents/skills/pptx-to-html-v8/SKILL.md`](.agents/skills/pptx-to-html-v8/SKILL.md).
+- **PDF or page images:** read [`.agents/skills/pdf_to_html_ocr_skill/SKILL.md`](.agents/skills/pdf_to_html_ocr_skill/SKILL.md).
+- Use [`.agents/skills/pptx-to-html-qa/SKILL.md`](.agents/skills/pptx-to-html-qa/SKILL.md) only for PPTX visual-regression or conversion QA.
 
-| Path | Role |
-|---|---|
-| `.agents/skills/pptx-to-html-v8/` | The skill itself: instructions, converter, QA. **Source of truth.** |
-| `scripts/`, `qa/` | Working copy of the converter used from the repository root. Must stay byte-identical to the skill's copy — change one, copy to the other. |
-| `inputdata/<bài>/` | Source .pptx decks. |
-| `outputdata/<bai_N>/` | Generated presentations, two levels below the root so the page's `../../index.html` menu link resolves. |
-| `index.html` | Menu listing every converted lesson. Add a card for each new deck. |
+Do not introduce a planning framework for ordinary conversion or UI changes. Inspect the source, implement directly, run proportional QA, and give the user the review link.
 
-## Quick start
+## Repository invariants
 
-```bash
-cd scripts
-python pptx2html.py -i <absolute-path-to-input.pptx> -o <repo>/outputdata/bai_N
+- Generated lessons live at `outputdata/<DDMMYYYY>/`; their link back to the root menu is `../../index.html`.
+- Every lesson page exposes a visible **Back to Main Menu** control. Keep it in the shared generator/template, not as a one-off edit.
+- PDF worksheets use `scripts/generate_v2.py`, `styles/shared.css`, and a data-driven `scripts/content_<date>_<type>.py` module.
+- Keep the root `index.html` synchronized with generated lessons. Each date group shows **Nội dung buổi học** outside the card grid and contains all available NDBH/BTVN cards.
+- Preserve source wording and mathematical content. If the source contradicts itself, reproduce both statements and add a short source note; never silently invent a correction.
+- Answers remain protected through the existing `mode-locked` flow. Printing and E-ink behavior must continue to work.
+- Use fluid readable typography. Mobile must not shrink the root font below 17px; wide tables may scroll inside their own bounds without making the whole page overflow.
 
-cd ..
-python qa/check_underlines.py outputdata/bai_N/presentation.html --pptx <absolute-path-to-input.pptx>
-```
+## Finish
 
-If a run fails midway PowerPoint can stay open as a ghost process — clear it with
-`taskkill /F /IM POWERPNT.EXE` before retrying.
+Regenerate from source, verify menu/back links and page completeness, render at one desktop and one narrow viewport, run `git diff --check`, then provide clickable links to `index.html` and the new lesson.

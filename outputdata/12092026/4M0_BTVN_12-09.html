@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4M0. BTVN 12-09</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles/shared.css">
+</head>
+<body class="mode-locked">
+<nav class="toolbar" aria-label="Điều hướng và công cụ">
+<a class="toolbar-home" href="../../index.html" aria-label="Back to Main Menu">&#8592; Back to Main Menu</a>
+<button onclick="document.body.classList.toggle('eink');this.classList.toggle('active')">📖 E-ink</button>
+<button onclick="printSheet(false)">🖨️ In đề bài</button>
+<button onclick="printSheet(true)">🖨️ In có đáp án</button>
+</nav>
+<div class="page-container">
+<div class="password-gate" id="passwordGate">
+    <div class="gate-icon">🔒</div>
+    <div class="gate-title">Đáp án được bảo vệ</div>
+    <div class="gate-desc">Dành cho Bố Mẹ — Nhập mật khẩu để xem đáp án</div>
+    <div><input type="password" id="pwInput" placeholder="••••••" maxlength="6" onkeydown="if(event.key==='Enter')checkPw()">
+    <button onclick="checkPw()">Mở khóa</button></div>
+    <div class="gate-error" id="pwError"></div>
+</div><div class="page-card">
+    <div class="page-header" style="justify-content:flex-start;">
+        <div class="meta-info" style="width:100%;text-align:left;">
+            <div class="lesson-title">BÀI TOÁN LẬP SỐ — BÀI TẬP VỀ NHÀ</div>
+            <div><b>Môn:</b> Toán 4 &nbsp; <b>Lớp:</b> 4M0 &nbsp; <b>Ngày:</b> 12/09/2026</div>
+        </div>
+    </div>
+    <div class="section-title">Bài tập về nhà</div>
+
+    <p><b>Bài 1.</b> Viết số tự nhiên x, biết:</p>
+    <div class="box-highlight">
+        <p>a) x = 7 × 1 000 + 3 × 100 + 4 × 10 + 2 &emsp; (x = <span class="answer">7 342</span><span class="blank">......</span>)</p>
+        <p>b) x = 9 × 10 000 + 7 × 100 + 5 &emsp; (x = <span class="answer">90 705</span><span class="blank">......</span>)</p>
+        <p>c) x = 4 × 1 000 000 + 8 × 1 000 + 7 &emsp; (x = <span class="answer">4 008 007</span><span class="blank">......</span>)</p>
+    </div>
+
+    <p><b>Bài 2.</b></p>
+    <p>a) Từ 3 chữ số 5, 1, 2 hãy viết tất cả các số có 3 chữ số khác nhau. Sắp xếp các số theo thứ tự từ lớn đến bé.</p>
+    <div class="answer-block answer">521, 512, 251, 215, 152, 125</div><div class="blank-block"><span class="blank-line"></span><span class="blank-line"></span></div>
+
+    <p>b) Từ 3 chữ số 3, 0, 8 hãy viết tất cả các số có 3 chữ số khác nhau. Sắp xếp các số theo thứ tự từ tăng dần.</p>
+    <div class="answer-block answer">308, 380, 803, 830</div><div class="blank-block"><span class="blank-line"></span><span class="blank-line"></span></div>
+
+    <p><b>Bài 3.</b> Cho 6 chữ số 0, 1, 2, 5, 6, 8. Viết số lớn nhất và nhỏ nhất có mặt đủ 6 chữ số trên.</p>
+    <div class="box-blue">
+        <p>Số lớn nhất: <span class="answer">865 210</span><span class="blank">......</span></p>
+        <p>Số bé nhất: <span class="answer">102 568</span><span class="blank">......</span></p>
+    </div>
+    <div class="page-footer"><span>Câu lạc bộ Toán học Muôn màu</span><span>Trang 1</span></div>
+</div>
+<div class="page-card">
+    <div class="page-header" style="justify-content:flex-start;">
+        <div class="meta-info" style="width:100%;text-align:left;">
+            <div class="lesson-title">BÀI TOÁN LẬP SỐ — BÀI TẬP VỀ NHÀ</div>
+            <div><b>Môn:</b> Toán 4 &nbsp; <b>Lớp:</b> 4M0 &nbsp; <b>Ngày:</b> 12/09/2026</div>
+        </div>
+    </div>
+    <p><b>Bài 4.</b> Viết số tự nhiên theo điều kiện sau:</p>
+    <div class="box-highlight">
+        <p>a) Lớn nhất có 5 chữ số: <span class="answer">99 999</span><span class="blank">......</span></p>
+        <p>b) Bé nhất có 4 chữ số khác nhau: <span class="answer">1 023</span><span class="blank">......</span></p>
+        <p>c) Lớn nhất có 6 chữ số mà hàng trăm là 5: <span class="answer">999 599</span><span class="blank">......</span></p>
+        <p>d) Số chẵn lớn nhất có 8 chữ số khác nhau: <span class="answer">98 765 432</span><span class="blank">......</span></p>
+        <p>e) Số lẻ lớn nhất có 7 chữ số khác nhau: <span class="answer">9 876 543</span><span class="blank">......</span></p>
+        <p>g) Số chẵn bé nhất có 6 chữ số khác nhau: <span class="answer">102 346</span><span class="blank">......</span></p>
+        <p>h) Số bé nhất có 6 chữ số khác nhau bắt đầu bởi chữ số 7: <span class="answer">701 234</span><span class="blank">......</span></p>
+    </div>
+
+    <p><b>Bài 5.</b> Viết:</p>
+    <p>a) Số tự nhiên bé nhất có 6 chữ số được viết từ ba chữ số khác nhau: <span class="answer">100 002</span><span class="blank">......</span></p>
+    <p>b) Số tự nhiên lớn nhất có 6 chữ số được viết từ ba chữ số khác nhau: <span class="answer">999 987</span><span class="blank">......</span></p>
+
+    <p><b>Bài 6.</b> Điền số thích hợp vào chỗ trống</p>
+    <p>Minh viết liên tiếp 8 số chẵn liên tiếp bắt đầu từ 2 để được một số tự nhiên. Hãy xóa đi 10 chữ số của số tự nhiên vừa nhận được mà vẫn giữ nguyên thứ tự của các chữ số còn lại.</p>
+    <div class="box-orange">
+        <p>Số Minh viết được là: <span class="answer">246810121416</span><span class="blank">......</span></p>
+        <p>Sau khi xóa 15 chữ số, số lớn nhất là: <span class="answer">86</span><span class="blank">......</span>, số bé nhất là: <span class="answer">01</span><span class="blank">......</span></p>
+    </div>
+    <div class="box-yellow" style="margin-top:var(--space-sm);">
+        <b>Lưu ý từ bản gốc:</b> phần mô tả ghi “xóa đi 10 chữ số”, còn dòng điền đáp án in sẵn ghi “Sau khi xóa 15 chữ số”.
+    </div>
+
+    <p><b>Bài 7.</b> Điền đáp án</p>
+    <table>
+        <thead><tr><th>Đề bài</th><th>Đáp án</th></tr></thead>
+        <tbody>
+            <tr><td>a) Tìm số tự nhiên nhỏ nhất có tổng các chữ số bằng 14.</td><td class="answer-cell"><span class="answer">59</span><span class="blank">......</span></td></tr>
+            <tr><td>b) Tìm số tự nhiên lớn nhất có các chữ số khác nhau mà tích các chữ số của số đó bằng 8.</td><td class="answer-cell"><span class="answer">421</span><span class="blank">......</span></td></tr>
+        </tbody>
+    </table>
+    <div class="page-footer"><span>Câu lạc bộ Toán học Muôn màu</span><span>Trang 2</span></div>
+</div>
+<div class="page-card">
+    <div class="page-header" style="justify-content:flex-start;">
+        <div class="meta-info" style="width:100%;text-align:left;">
+            <div class="lesson-title">BÀI TOÁN LẬP SỐ — BÀI TẬP VỀ NHÀ</div>
+            <div><b>Môn:</b> Toán 4 &nbsp; <b>Lớp:</b> 4M0 &nbsp; <b>Ngày:</b> 12/09/2026</div>
+        </div>
+    </div>
+    <p><b>Bài 7.</b> Điền đáp án (tiếp theo)</p>
+    <table>
+        <thead><tr><th>Đề bài</th><th>Đáp án</th></tr></thead>
+        <tbody>
+            <tr><td>c) Tìm số tự nhiên lớn nhất có 3 chữ số khác nhau mà tổng các chữ số bằng 12.</td><td class="answer-cell"><span class="answer">930</span><span class="blank">......</span></td></tr>
+            <tr><td>d) Tìm số tự nhiên bé nhất có 3 chữ số khác nhau mà tổng các chữ số bằng 12.</td><td class="answer-cell"><span class="answer">129</span><span class="blank">......</span></td></tr>
+            <tr><td>e) Tìm số tự nhiên bé nhất có 4 chữ số khác nhau mà tổng các chữ số bằng 17.</td><td class="answer-cell"><span class="answer">1 079</span><span class="blank">......</span></td></tr>
+            <tr><td>f) Tìm số tự nhiên bé nhất có các chữ số khác nhau và tổng các chữ số là 25.</td><td class="answer-cell"><span class="answer">1 789</span><span class="blank">......</span></td></tr>
+            <tr><td>g) Tìm số tự nhiên lớn nhất có các chữ số khác nhau và tổng các chữ số là 17.</td><td class="answer-cell"><span class="answer">743 210</span><span class="blank">......</span></td></tr>
+        </tbody>
+    </table>
+
+    <div style="margin-top:var(--space-xl);">
+        <p><b>Chữa bài sai</b></p>
+        <span class="blank-line"></span>
+        <span class="blank-line"></span>
+        <span class="blank-line"></span>
+        <span class="blank-line"></span>
+        <span class="blank-line"></span>
+        <span class="blank-line"></span>
+        <span class="blank-line"></span>
+        <span class="blank-line"></span>
+    </div>
+    <div class="page-footer"><span>Câu lạc bộ Toán học Muôn màu</span><span>Trang 3</span></div>
+</div>
+</div>
+<script>
+function checkPw(){var p=document.getElementById('pwInput').value;
+if(p==='000000'){document.body.classList.remove('mode-locked');document.body.classList.add('mode-unlocked');
+document.getElementById('passwordGate').style.display='none';}
+else{document.getElementById('pwError').textContent='Sai mật khẩu!';
+document.getElementById('pwInput').value='';document.getElementById('pwInput').focus();}}
+document.addEventListener('DOMContentLoaded',function(){var i=document.getElementById('pwInput');if(i)i.focus();});
+</script><script>
+function printSheet(withAnswers){
+var b=document.body;
+var had=b.className;
+b.classList.remove('mode-locked','mode-unlocked','mode-questions');
+b.classList.add(withAnswers?'mode-unlocked':'mode-questions');
+window.print();
+b.className=had;
+}
+</script>
+</body>
+</html>

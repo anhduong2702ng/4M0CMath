@@ -32,21 +32,25 @@
     --space-2xl: 3rem;
 
     /* Sizing */
-    --page-max: 900px;
+    --page-max: 980px;
     --radius: 0.75rem;
     --radius-sm: 0.375rem;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { font-size: 16px; }
+html {
+    font-size: clamp(17px, calc(16px + 0.25vw), 19px);
+    -webkit-text-size-adjust: 100%;
+}
 
 body {
     font-family: var(--font-sans);
     background-color: var(--bg-body);
     color: var(--text-main);
     line-height: 1.65;
-    padding: var(--space-lg);
+    padding: clamp(var(--space-sm), 2.5vw, var(--space-xl));
+    overflow-wrap: break-word;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -63,7 +67,7 @@ body {
     background: var(--bg-card);
     border-radius: var(--radius);
     box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04);
-    padding: var(--space-xl);
+    padding: clamp(var(--space-md), 4vw, 2.25rem);
     margin-bottom: var(--space-xl);
     page-break-inside: avoid;
 }
@@ -99,12 +103,12 @@ body {
 
 .meta-info {
     text-align: right;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     line-height: 1.6;
     color: var(--text-dark);
 }
 .meta-info .lesson-title {
-    font-size: 1.1rem;
+    font-size: clamp(1.2rem, 2.6vw, 1.45rem);
     font-weight: 700;
     color: var(--text-dark);
     margin-bottom: var(--space-xs);
@@ -112,7 +116,7 @@ body {
 
 /* ---------- Section Titles ---------- */
 .section-title {
-    font-size: 1.3rem;
+    font-size: clamp(1.35rem, 3vw, 1.65rem);
     font-weight: 700;
     color: var(--text-dark);
     margin: var(--space-lg) 0 var(--space-md);
@@ -122,7 +126,7 @@ body {
 }
 
 .sub-title {
-    font-size: 1.1rem;
+    font-size: clamp(1.15rem, 2.4vw, 1.3rem);
     font-weight: 600;
     color: var(--text-dark);
     margin: var(--space-md) 0 var(--space-sm);
@@ -135,7 +139,7 @@ body {
 
 /* ---------- Content Typography ---------- */
 .content-area {
-    font-size: 1rem;
+    font-size: 1.05rem;
     line-height: 1.7;
 }
 .content-area p { margin-bottom: var(--space-sm); }
@@ -183,7 +187,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: var(--space-md) 0;
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 th, td {
     border: 1px solid var(--border-color);
@@ -193,7 +197,7 @@ th, td {
 th {
     background: #f1f5f9;
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.92rem;
     text-align: center;
 }
 td { vertical-align: top; }
@@ -224,11 +228,11 @@ td.answer-cell { text-align: center; }
     padding: var(--space-md);
     border-radius: var(--radius-sm);
     box-shadow: 2px 3px 8px rgba(0,0,0,0.08);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 .note-card .note-title {
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 1rem;
     text-align: center;
     margin-bottom: var(--space-sm);
 }
@@ -250,7 +254,7 @@ td.answer-cell { text-align: center; }
     margin-top: var(--space-lg);
     padding-top: var(--space-sm);
     border-top: 1px solid var(--border-light);
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: var(--text-gray);
 }
 
@@ -262,7 +266,7 @@ td.answer-cell { text-align: center; }
 }
 .password-gate .gate-icon { font-size: 3rem; margin-bottom: var(--space-md); }
 .password-gate .gate-title {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 600;
     color: var(--text-dark);
     margin-bottom: var(--space-sm);
@@ -270,7 +274,7 @@ td.answer-cell { text-align: center; }
 .password-gate .gate-desc {
     color: var(--text-gray);
     margin-bottom: var(--space-lg);
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 .password-gate input[type="password"] {
     padding: 0.6rem 1rem;
@@ -315,22 +319,41 @@ td.answer-cell { text-align: center; }
     margin: 0 auto var(--space-md);
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
     gap: var(--space-sm);
 }
-.toolbar button {
+.toolbar button,
+.toolbar-home {
     background: var(--bg-card);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-sm);
-    padding: var(--space-xs) var(--space-md);
-    font-size: 0.8rem;
+    min-height: 44px;
+    padding: 0.55rem var(--space-md);
+    font-size: 0.9rem;
     cursor: pointer;
     color: var(--text-gray);
     transition: all 0.2s;
     font-family: var(--font-sans);
+    font-weight: 600;
 }
-.toolbar button:hover {
+.toolbar-home {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-right: auto;
+    color: var(--text-blue);
+    text-decoration: none;
+}
+.toolbar button:hover,
+.toolbar-home:hover {
     background: #f1f5f9;
     color: var(--text-dark);
+}
+.toolbar button:focus-visible,
+.toolbar-home:focus-visible {
+    outline: 3px solid rgba(37,99,235,0.3);
+    outline-offset: 2px;
 }
 .toolbar button.active {
     background: var(--text-dark);
@@ -479,7 +502,11 @@ body.eink .section-title { border-bottom-color: #000; }
         print-color-adjust: exact;
     }
 
-    table { page-break-inside: avoid; }
+    table {
+        display: table;
+        overflow: visible;
+        page-break-inside: avoid;
+    }
 
     a { text-decoration: none; color: inherit; }
 }
@@ -488,7 +515,6 @@ body.eink .section-title { border-bottom-color: #000; }
    RESPONSIVE (Mobile)
    ============================================================ */
 @media (max-width: 768px) {
-    html { font-size: 14px; }
     body { padding: var(--space-sm); }
 
     .page-header {
@@ -499,15 +525,40 @@ body.eink .section-title { border-bottom-color: #000; }
 
     .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
 
-    table { font-size: 0.85rem; }
-    th, td { padding: var(--space-xs) var(--space-sm); }
+    table {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+        font-size: 0.92rem;
+        white-space: normal;
+        -webkit-overflow-scrolling: touch;
+    }
+    th, td {
+        min-width: 4.5rem;
+        padding: var(--space-sm);
+    }
 
     .page-card { padding: var(--space-md); }
-    .toolbar { flex-wrap: wrap; }
+    .toolbar > * { flex: 1 1 calc(50% - var(--space-sm)); }
+    .toolbar-home {
+        justify-content: center;
+        margin-right: 0;
+        text-align: center;
+    }
 }
 
 @media (max-width: 480px) {
-    html { font-size: 13px; }
-    .brand-name { font-size: 1.4rem; }
-    .meta-info .lesson-title { font-size: 1rem; }
+    .brand-name { font-size: 1.55rem; }
+    .page-footer {
+        flex-direction: column;
+        gap: var(--space-xs);
+    }
+    .password-gate {
+        padding: var(--space-xl) var(--space-sm);
+    }
+    .password-gate input[type="password"],
+    .password-gate button {
+        width: 100%;
+        margin: var(--space-xs) 0 0;
+    }
 }

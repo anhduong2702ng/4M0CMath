@@ -43,11 +43,12 @@ document.getElementById('pwInput').value='';document.getElementById('pwInput').f
 document.addEventListener('DOMContentLoaded',function(){var i=document.getElementById('pwInput');if(i)i.focus();});
 </script>'''
 
-TOOLBAR = '''<div class="toolbar">
+TOOLBAR = '''<nav class="toolbar" aria-label="Điều hướng và công cụ">
+<a class="toolbar-home" href="../../index.html" aria-label="Back to Main Menu">&#8592; Back to Main Menu</a>
 <button onclick="document.body.classList.toggle('eink');this.classList.toggle('active')">📖 E-ink</button>
 <button onclick="printSheet(false)">🖨️ In đề bài</button>
 <button onclick="printSheet(true)">🖨️ In có đáp án</button>
-</div>'''
+</nav>'''
 
 PRINT_SCRIPT = '''<script>
 function printSheet(withAnswers){

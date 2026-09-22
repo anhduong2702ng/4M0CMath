@@ -1,64 +1,73 @@
 ---
-name: PDF to HTML OCR (Data-driven)
-description: Extract pages from a PDF to images, perform AI vision OCR to transcribe the text, and synthesize the results into an HTML file using a Python-based data-driven template approach to save tokens. Ensures responsive layout and sharp typography.
+name: pdf-to-html-ocr
+description: Convert scanned or photographed worksheet PDFs into faithful, responsive CMath HTML using page-image inspection and the repository's data-driven generator.
 ---
 
-# PDF to HTML OCR Skill (Data-Driven Architecture)
+# PDF Worksheet to Responsive HTML
 
-When the user asks to convert a PDF or images into an HTML file using OCR, follow these steps to ensure structural consistency, avoid layout breaks ("vỡ font"), maintain sharp text, and guarantee mobile responsiveness:
+Use this skill for scanned PDFs or page images. It is optimized for this repository's vertical worksheets, not fixed 16:9 slide decks.
 
-1. **Extract/Prepare Images**
-   - Check if `PyMuPDF` (fitz) is installed. If not, use the `run_command` tool to run `pip install pymupdf`.
-   - Write and execute a short Python script via the `run_command` tool to extract the required pages from the target PDF as images (if starting from a PDF). Ensure extraction at high DPI (e.g., zoom=2 or 3) if possible to retain quality.
+## Source preparation
 
-2. **Data-Driven Architecture Setup**
-   - **Do not** write raw HTML for each page directly, as duplicating HTML boilerplate and inline CSS consumes excessive tokens and increases the risk of layout breakage.
-   - Instead, create a central Python script (e.g., `manual_generator.py`).
-   - Define a single global HTML `TEMPLATE` inside the script. 
+1. Identify the input PDF, date, lesson topic, and whether it is NDBH or BTVN.
+2. Check whether PyMuPDF is available before installing anything.
+3. Register reusable inputs in `scripts/extract_pdf.py`.
+4. Render every page at 3× into:
+   - `outputdata/<DDMMYYYY>/images_ndbh_<date>/`, or
+   - `outputdata/<DDMMYYYY>/images_btvn_<date>/`.
 
-3. **Mandatory CSS Rules (Responsiveness & Sharpness)**
-   - To ensure text is sharp and clear, add the following to the `body` or `:root` CSS:
-     ```css
-     -webkit-font-smoothing: antialiased;
-     -moz-osx-font-smoothing: grayscale;
-     text-rendering: optimizeLegibility;
-     ```
-   - Use container query units (`cqw`) or viewport width (`vw`) combined with a fixed `aspect-ratio: 16 / 9` container for the desktop view, ensuring absolute visual fidelity to the original slides.
-   - **Must be responsive**: Implement `@media (max-width: 768px)` to handle mobile displays. In this block, disable fixed aspect ratios (`aspect-ratio: auto; min-height: 100vh;`), convert grid layouts to a single column (`grid-template-columns: 1fr;`), and adjust padding and typography accordingly.
+Reuse `extract_pdf()`; do not create another extractor unless the source needs different processing.
 
-4. **Transcribe Images (OCR) & Semantic Layout**
-   - Use the `view_file` tool to visually inspect each extracted image.
-   - For each image, transcribe the text and layout logic as an HTML string literal and append it to an array/list in your Python script.
-   - Formatting Rules:
-     - Apply exact colors and font hierarchies as seen in the image.
-     - Isolate components into reusable CSS classes defined in the global template.
-     - **Important**: Do not skip or omit complex diagrams or background images that convey meaning. Reconstruct them using CSS Grid/Flexbox or embed the original image snippet precisely.
+## OCR and content modeling
 
-5. **Generation**
-   - Run the Python script to map the data array into the global `TEMPLATE` and output a single `.html` file.
-   - If using `utf-8` text from files, explicitly open files with `encoding='utf-8'` in Python to prevent `UnicodeEncodeError`.
+Inspect every rendered page with the image viewer. For each page:
 
-6. **QA Verification (Mandatory Protocol)**
-   Thay vì review cảm tính, bạn PHẢI thực hiện rà soát theo 4 bước chuẩn hóa sau đối với từng slide:
+- Count the visible regions: header, exercise blocks, tables/diagrams, and footer.
+- Transcribe printed wording exactly and in reading order. Do not summarize or paraphrase.
+- Treat clear handwriting as answer data, not as printed question text.
+- Verify mathematical answers independently when practical.
+- If the printed source is internally inconsistent, preserve the conflicting wording and add a concise **Lưu ý từ bản gốc**. Do not silently rewrite it.
+- Reconstruct meaningful tables and diagrams semantically. Embed a source image only when HTML/CSS would lose essential meaning.
 
-   *   **Bước 1: Visual Region Mapping (Lập bản đồ khu vực)**
-       *   Chia slide gốc thành các khối thị giác (Khối tiêu đề, Khối nội dung trái, Khối nội dung phải, Footer...). Đếm số lượng khối.
-       *   Đảm bảo HTML sinh ra có chính xác số lượng container tương ứng.
-   *   **Bước 2: Data Completeness Check (Rà soát chống mất chữ - Chống Data Loss)**
-       *   Lỗi phổ biến nhất của AI Vision là bỏ sót text nằm trong các hình hộp màu nền đậm (như thẻ màu đen/xanh).
-       *   Lỗi phổ biến thứ hai là **rút gọn/diễn giải lại** (paraphrase) thay vì chép nguyên văn. Ví dụ: gốc viết "Cần ít chữ số nhất có thể, ưu tiên đưa các chữ số lớn (như 9) về hàng thấp" nhưng AI tự rút thành "Ít chữ số nhất, đưa chữ số lớn (9) về hàng thấp" — đúng ý nhưng mất từ ngữ gốc.
-       *   *Hành động:* Quét mắt đọc từng câu trong ảnh gốc và đối chiếu 1-1 với HTML. Không được phép sót một câu nào dù là text siêu nhỏ. Phải giữ **nguyên văn** — không rút gọn, không diễn giải lại, không bỏ bớt từ.
-   *   **Bước 3: Layout & Chart Fidelity (Chống Ảo giác Bố cục & Biểu đồ)**
-       *   *Case Study (Lỗi Slide 04):* AI biến biểu đồ thanh ngang (Horizontal Bar Chart) thành một cái bảng 3 cột (grid-3), làm hỏng hoàn toàn ý nghĩa hình ảnh.
-       *   *Hành động:* TUYỆT ĐỐI KHÔNG dùng text grid/table để thay thế cho biểu đồ (charts) hoặc sơ đồ (diagrams). Bạn phải dùng HTML/CSS (`width: %`, `flex`) để vẽ lại đúng hình dáng thanh biểu đồ, hoặc cắt ảnh gốc chèn vào nếu sơ đồ quá phức tạp.
-   *   **Bước 4: Overflow & Fit Check (Chống tràn)**
-       *   *Case Study (Lỗi Slide 08):* Nếu ảnh gốc có layout xếp chồng 4 cột trên 3 cột, đừng đoán mò tự gộp thành 2x2.
-       *   Sử dụng Flexbox cho footer (`margin-top: auto`) và thu phóng `cqw` nội bộ để nhét vừa slide dày đặc vào container 16:9 mà không đẩy footer ra ngoài.
-   
-   Nếu phát hiện bất kỳ sự sai lệch nào, phải lập tức cập nhật lại script Python (data/template) và chạy lại.
+Create one data-driven content module such as `scripts/content_12_btvn.py`. Reuse helpers from `scripts/generate_v2.py`:
 
-7. **Reference Example**
-   - Trong thư mục skill này có cung cấp sẵn thư mục `examples/` chứa file `manual_results.html`. Đây là file mẫu (Golden template) cho cấu trúc CSS `cqw`, grid, và typography đã được chuẩn hoá để tham khảo khi render PDF sang HTML.
+- `hdr()` and `foot()` for one `.page-card` per source page.
+- `A()` and `Ablk()` for protected answers.
+- `gen_theory()`, `gen_debai()`, or `gen_btvn()` for the required access mode.
 
-8. **Cleanup & Delivery**
-   - Provide the user with a clickable link to the final HTML file.
+Do not duplicate the full HTML shell or shared CSS inside each content module.
+
+## Responsive and navigation requirements
+
+- Output to `outputdata/<DDMMYYYY>/<class>_<type>_<date>.html`.
+- Inherit `styles/shared.css`; preserve font smoothing and the fluid 17–19px root scale.
+- Grids collapse to one column on narrow screens.
+- Wide tables scroll horizontally inside the table area.
+- Controls have touch-friendly sizing.
+- Every page includes the generator-provided `../../index.html` **Back to Main Menu** link.
+- Print mode hides navigation and preserves readable worksheet layout.
+
+Update `index.html` in the same change:
+
+- Add the lesson card to the correct date group.
+- Ensure that date group has a visible `session-topic` outside the card grid.
+- Keep all card targets valid.
+
+## QA
+
+Before delivery:
+
+1. Confirm extracted image count equals PDF page count.
+2. Confirm generated `.page-card` count equals PDF page count.
+3. Check a list of distinctive sentences from every page against the generated HTML.
+4. Confirm answer and blank markup exists where expected.
+5. Confirm all Main Menu card targets exist and the lesson's back link resolves.
+6. Render the lesson and Main Menu at a desktop width and a narrow width (about 500px); inspect for clipping, page-wide overflow, and unreadable text.
+7. Run `git diff --check`.
+8. Remove temporary screenshots/profiles; keep the extracted OCR page images.
+
+Return clickable links to the root Main Menu and the generated lesson.
+
+## Conditional reference
+
+Read `examples/manual_results.html` only when the source is genuinely slide-like and requires a fixed 16:9 container or complex chart reconstruction. Ordinary worksheets do not need this large example.
